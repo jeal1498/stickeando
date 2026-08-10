@@ -1,0 +1,58 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --yellow:#ffe600;
+  --blue:#3483fa;
+  --blue-dark:#2968c8;
+  --green:#00a650;
+  --orange:#ff7a1a;
+  --text:#333;
+  --muted:#666;
+  --light:#999;
+  --line:#e6e6e6;
+  --bg:#ebebeb;
+  --white:#fff;
+  --danger:#e74c3c;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.4;
+  padding-bottom:76px;
+  -webkit-font-smoothing:antialiased;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(1200px,100% - 24px);
+  margin:auto;
+}
+

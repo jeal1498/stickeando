@@ -1,0 +1,211 @@
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:850px){
+
+  body{
+    padding-bottom:0;
+  }
+
+  .buy-bar{
+    position:static;
+
+    margin-top:12px;
+
+    border:0;
+
+    border-radius:7px;
+
+    max-width:1200px;
+
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .product-card{
+    display:grid;
+
+    grid-template-columns:58% 42%;
+  }
+
+  .gallery{
+    min-width:0;
+  }
+
+  .info{
+    padding:28px;
+  }
+
+  .divider{
+    margin-left:-28px;
+    margin-right:-28px;
+  }
+
+  .buy-summary{
+    display:none;
+  }
+
+  .buy-button{
+    max-width:360px;
+
+    margin-left:auto;
+  }
+
+  .related-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+  .container{
+    width:100%;
+    margin:0;
+  }
+
+  .product-card{
+    border-radius:0;
+    box-shadow:none;
+  }
+
+  .gallery-main{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    min-height:0;
+  }
+
+  .preview-art{
+    width:92%;
+    height:92%;
+  }
+
+  .gallery-tools{
+    top:12px;
+    left:12px;
+    right:12px;
+  }
+
+  .gallery-tools-right{
+    gap:8px;
+  }
+
+  .gallery-tool{
+    width:44px;
+    height:44px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .container{
+    width:100%;
+  }
+
+  .breadcrumb{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .brand{
+    display:none;
+  }
+
+  .header-search{
+    order:0;
+  }
+
+  .topbar-inner{
+    padding:8px 10px;
+  }
+
+  .header-action{
+    display:none;
+  }
+
+  /*
+    NO se utiliza height:82vw.
+    La galería continúa siendo estrictamente 1:1.
+  */
+
+  .gallery-main{
+    width:100%;
+    aspect-ratio:1 / 1;
+    height:auto;
+    min-height:0;
+  }
+
+  .preview-stickers{
+    gap:8px;
+    width:74%;
+  }
+
+  .preview-title{
+    font-size:12px;
+  }
+
+  .info{
+    padding:15px 12px;
+  }
+
+  .divider{
+    margin-left:-12px;
+    margin-right:-12px;
+  }
+
+  .title{
+    font-size:20px;
+  }
+
+  .related-grid{
+    display:flex;
+    overflow-x:auto;
+  }
+
+  .related-card{
+    flex:0 0 150px;
+  }
+
+  .related-image{
+    height:110px;
+  }
+
+  .section{
+    border-radius:0;
+    margin-top:8px;
+  }
+
+  .gallery-tools{
+    top:10px;
+    left:10px;
+    right:10px;
+  }
+
+  .gallery-tool{
+    width:42px;
+    height:42px;
+  }
+
+  .gallery-tool svg{
+    width:24px;
+    height:24px;
+  }
+
+  .gallery-tool.whatsapp svg{
+    width:26px;
+    height:26px;
+  }
+
+  .gallery-tool.share svg{
+    width:25px;
+    height:25px;
+  }
+}
+

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FFE600">
+  <title>Stickeando — Stickers para WhatsApp</title>
+</head>
+<body>
+
+  <!-- =======================================================
+       HOME / FEED
+  ======================================================== -->
+
+  <div id="homeView">
+
+    <header class="topbar">
+      <div class="container topbar-inner">
+
+        <div class="top-icon" aria-hidden="true">💬</div>
+        <div class="feed-brand">Stickeando</div>
+
+        <div class="header-search">
+          <input type="search" placeholder="Buscar stickers, paquetes y diseños" aria-label="Buscar">
+          <button type="button" aria-label="Buscar">🔍</button>
+        </div>
+
+        <button
+          class="top-icon feed-cart-btn"
+          type="button"
+          data-action="open-cart"
+          aria-label="Ver carrito">
+          🛒
+          <span class="feed-cart-badge hidden" id="cartBadge">0</span>
+        </button>
+
+      </div>
+    </header>
+
+    <main class="container feed-wrap">
+
+      <p class="feed-title">Recomendado para ti en <strong>Stickers para WhatsApp</strong></p>
+
+      <div class="feed">
+
+        <!-- PRODUCTO: BÁSICO -->
+        <a class="feed-card" href="#" data-id="basico" data-action="go-to-product">
+          <div class="feed-card-art">
+            <div class="feed-art-stickers" aria-hidden="true">
+              <span>💬</span><span>😊</span><span>👌</span>
+              <span>✨</span><span>🙌</span><span>😅</span>
+            </div>
+            <button type="button" class="feed-quick-add" data-id="basico" aria-label="Agregar Básico al carrito">＋</button>
+          </div>
+          <div class="feed-card-body">
+            <h3>Paquete Básico de Stickers</h3>
+            <div class="feed-price-row">
+              <span class="feed-price">$149<sup>00</sup></span>
+            </div>
+            <div class="feed-spacer"></div>
+            <div class="feed-digital-tag">Entrega digital inmediata</div>
+          </div>
+        </a>
+
+        <!-- PRODUCTO: PROFESIONAL -->
+        <a class="feed-card" href="#" data-id="profesional" data-action="go-to-product">
+          <div class="feed-card-art">
+            <div class="feed-art-stickers" aria-hidden="true">
+              <span>🧠</span><span>💡</span><span>📌</span>
+              <span>🗓️</span><span>✅</span><span>💬</span>
+            </div>
+            <button type="button" class="feed-quick-add" data-id="profesional" aria-label="Agregar Profesional al carrito">＋</button>
+          </div>
+          <div class="feed-card-body">
+            <h3>Paquete Profesional +30 Stickers para WhatsApp</h3>
+            <div class="feed-price-row">
+              <span class="feed-price">$349<sup>00</sup></span>
+              <span class="feed-old-price">$498</span>
+            </div>
+            <span class="feed-discount-tag">30% OFF</span>
+            <div class="feed-spacer"></div>
+            <div class="feed-digital-tag">Entrega digital inmediata</div>
+          </div>
+        </a>
+
+        <!-- PRODUCTO: PREMIUM -->
+        <a class="feed-card" href="#" data-id="premium" data-action="go-to-product">
+          <div class="feed-card-art">
+            <div class="feed-art-stickers" aria-hidden="true">
+              <span>🐱</span><span>🎨</span><span>⭐</span>
+              <span>💜</span><span>🐾</span><span>✨</span>
+            </div>
+            <button type="button" class="feed-quick-add" data-id="premium" aria-label="Agregar Premium al carrito">＋</button>
+          </div>
+          <div class="feed-card-body">
+            <h3>Paquete Premium Personalizado</h3>
+            <div class="feed-price-row">
+              <span class="feed-price">$1,200<sup>00</sup></span>
+            </div>
+            <div class="feed-spacer"></div>
+            <div class="feed-digital-tag">Entrega digital inmediata</div>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- =======================================================
+       PRODUCT
+  ======================================================== -->
+
+  <div id="productView" style="display:none">
+
+  <main class="container">
+
+    <section class="product-card">
+
+
+      <!-- =====================================================
+           GALERÍA
+      ====================================================== -->
+
+      <div class="gallery">
+
+
+        <!-- CONTROLES SUPERIORES -->
+
+        <div
+          class="gallery-tools"
+          aria-label="Acciones del producto">
+
+
+          <!-- REGRESAR -->
+
+          <div class="gallery-tools-left">
+
+            <button
+              class="gallery-tool"
+              type="button"
+              data-action="go-back"
+              aria-label="Regresar">
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <path d="M19 12H5"></path>
+
+                <path d="m12 19-7-7 7-7"></path>
+
+              </svg>
+
+            </button>
+
+          </div>
+
+
+          <!-- LUPA / WHATSAPP / COMPARTIR -->
+
+          <div class="gallery-tools-right">
+
+
+            <!-- LUPA -->
+
+            <button
+              class="gallery-tool"
+              id="zoomBtn"
+              type="button"
+              data-action="toggle-zoom"
+              aria-label="Ampliar imagen"
+              aria-pressed="false">
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <circle
+                  cx="10.8"
+                  cy="10.8"
+                  r="6.6">
+                </circle>
+
+                <path d="m16 16 5 5"></path>
+
+              </svg>
+
+            </button>
+
+
+            <!-- WHATSAPP -->
+
+            <button
+              class="gallery-tool whatsapp"
+              type="button"
+              data-action="share-whatsapp"
+              aria-label="Compartir por WhatsApp">
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <path
+                  d="M20.5 11.2a8.3 8.3 0 0 1-12.3 7.1L4 19.5l1.2-4A8.3 8.3 0 1 1 20.5 11.2Z">
+                </path>
+
+                <path
+                  d="M9 8.3c.2-.4.4-.5.7-.5h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.5c0 .3-.1.5-.5.7-.5.3-1.2.3-1.9.1-2.2-.6-4.4-2.8-5-5-.2-.7-.2-1.4.1-1.9Z">
+                </path>
+
+              </svg>
+
+            </button>
+
+
+            <!-- COMPARTIR -->
+
+            <button
+              class="gallery-tool share"
+              type="button"
+              data-action="share-product"
+              aria-label="Compartir producto">
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <circle
+                  cx="18"
+                  cy="5"
+                  r="2.5">
+                </circle>
+
+                <circle
+                  cx="6"
+                  cy="12"
+                  r="2.5">
+                </circle>
+
+                <circle
+                  cx="18"
+                  cy="19"
+                  r="2.5">
+                </circle>
+
+                <path d="m8.2 10.8 7.6-4.4"></path>
+
+                <path d="m8.2 13.2 7.6 4.4"></path>
+
+              </svg>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- GALERÍA PRINCIPAL -->
+
+        <div
+          class="gallery-main"
+          id="galleryMain">
+
+
+          <!-- PREVIEW -->
+
+          <div class="preview-art">
+
+            <div
+              class="preview-stickers"
+              id="previewStickers">
+
+              <div class="sticker">
+                🧠
+              </div>
+
+              <div class="sticker">
+                😂
+              </div>
+
+              <div class="sticker">
+                ❤️
+              </div>
+
+              <div class="sticker">
+                👍
+              </div>
+
+              <div class="sticker">
+                🙌
+              </div>
+
+              <div class="sticker">
+                😊
+              </div>
+
+            </div>
+
+
+            <div
+              class="preview-title"
+              id="previewTitle">
+
+              Paquete Profesional · +30 stickers
+
+            </div>
+
+          </div>
+
+
+          <!-- VIDEO — DIAPOSITIVA 6 -->
+
+          <div
+            class="gallery-video"
+            id="galleryVideo"
+            aria-hidden="true">
+
+            <div class="video-placeholder">
+
+              <div class="video-placeholder-icon">
+                ▶
+              </div>
+
+              <strong>
+                Video de demostración
+              </strong>
+
+              <span>
+                Agrega tu videoclip en
+                <code>media/stickers-demo.mp4</code>
+              </span>
+
+            </div>
+
+
+            <video
+              id="demoVideo"
+              playsinline
+              controls
+              preload="metadata">
+
+              <source
+                src="media/stickers-demo.mp4"
+                type="video/mp4">
+
+            </video>
+
+          </div>
+
+
+          <!-- BOTÓN PLAY -->
+
+          <button
+            class="video-play"
+            id="videoPlay"
+            aria-label="Ver demostración">
+
+            ▶
+
+          </button>
+
+
+          <!-- CONTADOR -->
+
+          <div
+            class="image-counter"
+            id="imageCounter">
+
+            1 / 6
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           PRODUCT INFORMATION
+      ====================================================== -->
+
+      <div class="info">
+
+
+        <div class="badges">
+
+          <span class="badge-best">
+            MÁS VENDIDO
+          </span>
+
+          <span class="category">
+            Stickers para WhatsApp
+          </span>
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <div class="title-row">
+
+          <h1
+            class="title"
+            id="productTitle">
+
+            Paquete Profesional +30 Stickers para WhatsApp
+
+          </h1>
+
+
+          <!-- FAVORITE -->
+
+          <button
+            class="favorite"
+            id="favoriteBtn"
+            data-action="toggle-favorite"
+            aria-label="Agregar a favoritos"
+            aria-pressed="false">
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true">
+
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z">
+              </path>
+
+            </svg>
+
+          </button>
+
+        </div>
+
+
+        <!-- RATING -->
+
+        <div class="rating">
+
+          <span class="stars">
+            ★★★★★
+          </span>
+
+          <strong>
+            4.9
+          </strong>
+
+          <span class="rating-count">
+            | +250 vendidos
+          </span>
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- PACKAGE -->
+
+        <div class="selector-label">
+
+          <strong>
+            Paquete:
+          </strong>
+
+          <span id="selectedPackage">
+            Profesional
+          </span>
+
+        </div>
+
+
+        <div class="package-options">
+
+
+          <button
+            class="package"
+            data-id="basico"
+            data-action="select-package">
+
+            <strong>
+              Básico
+            </strong>
+
+            <small>
+              $149 · 5 stickers
+            </small>
+
+          </button>
+
+
+          <button
+            class="package selected"
+            data-id="profesional"
+            data-action="select-package">
+
+            <strong>
+              Profesional
+            </strong>
+
+            <small>
+              $349 · +30 stickers
+            </small>
+
+          </button>
+
+
+          <button
+            class="package"
+            data-id="premium"
+            data-action="select-package">
+
+            <strong>
+              Premium
+            </strong>
+
+            <small>
+              $1,200 · personalizado
+            </small>
+
+          </button>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div
+          class="price-old"
+          id="priceOld">
+
+          $498 MXN
+
+        </div>
+
+
+        <div class="price-row">
+
+          <div
+            class="price"
+            id="price">
+
+            $349
+
+          </div>
+
+          <span
+            class="discount"
+            id="discount">
+
+            30% OFF
+
+          </span>
+
+        </div>
+
+
+        <div class="tax">
+          IVA incluido
+        </div>
+
+
+        <div class="wallet">
+          💳 Descuentos disponibles con algunos medios de pago
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- BENEFITS -->
+
+        <div class="benefits">
+
+
+          <div class="benefit">
+
+            <div class="benefit-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <strong>
+                Entrega digital inmediata
+              </strong>
+
+              <p>
+                Recibe tu paquete después de completar el pago.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="benefit">
+
+            <div class="benefit-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <strong>
+                Compatible con WhatsApp
+              </strong>
+
+              <p>
+                Diseñado para utilizarse directamente desde WhatsApp.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="benefit">
+
+            <div class="benefit-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <strong>
+                Compra única
+              </strong>
+
+              <p>
+                Un solo pago. Sin suscripciones ni cargos recurrentes.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="benefit">
+
+            <div class="benefit-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <strong>
+                Compra segura
+              </strong>
+
+              <p>
+                Procesamos tu pedido y te entregamos el producto digital.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
+        <!-- PAYMENTS -->
+
+        <div class="payments">
+
+          <div class="payments-title">
+            Medios de pago
+          </div>
+
+          <div class="payment-icons">
+
+            <span class="pay-icon">
+              VISA
+            </span>
+
+            <span class="pay-icon">
+              MC
+            </span>
+
+            <span class="pay-icon">
+              AMEX
+            </span>
+
+            <span class="pay-icon">
+              MP
+            </span>
+
+            <span class="pay-icon">
+              OXXO
+            </span>
+
+            <span class="pay-icon pay-more">
+              +8
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHAT INCLUDES
+    ====================================================== -->
+
+    <section class="section">
+
+      <h2>
+        ¿Qué incluye?
+      </h2>
+
+      <ul class="feature-list">
+
+        <li id="feature1">
+          Más de 30 stickers exclusivos.
+        </li>
+
+        <li id="feature2">
+          Diseños listos para utilizar en WhatsApp.
+        </li>
+
+        <li id="feature3">
+          Entrega digital después de tu compra.
+        </li>
+
+        <li id="feature4">
+          Sin costos de envío ni cargos recurrentes.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- =====================================================
+         DESCRIPTION
+    ====================================================== -->
+
+    <section class="section">
+
+      <h2>
+        Descripción del producto
+      </h2>
+
+      <div
+        class="description"
+        id="description">
+
+        <p>
+          Lleva tu comunicación de WhatsApp al siguiente nivel
+          con un paquete de stickers diseñados para profesionales.
+        </p>
+
+        <p>
+          El paquete Profesional está pensado para psicólogos,
+          terapeutas, consultorios y profesionales que quieren
+          comunicarse de una manera más cercana y visual.
+        </p>
+
+        <p>
+          Después de completar tu compra recibirás las instrucciones
+          necesarias para obtener y utilizar tus stickers.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RELATED
+    ====================================================== -->
+
+    <section class="section">
+
+      <h2>
+        También te puede interesar
+      </h2>
+
+      <div class="related-grid">
+
+
+        <article
+          class="related-card"
+          data-action="select-package">
+
+          <div class="related-image">
+            💬
+          </div>
+
+          <div class="related-body">
+
+            <div class="related-name">
+              Paquete Básico de Stickers
+            </div>
+
+            <div class="related-price">
+              $149
+            </div>
+
+            <div class="related-note">
+              Entrega digital
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article
+          class="related-card"
+          data-action="select-package">
+
+          <div class="related-image">
+            🧠
+          </div>
+
+          <div class="related-body">
+
+            <div class="related-name">
+              Paquete Profesional +30 Stickers
+            </div>
+
+            <div class="related-price">
+              $349
+            </div>
+
+            <div class="related-note">
+              Más vendido
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article
+          class="related-card"
+          data-action="select-package">
+
+          <div class="related-image">
+            🐱
+          </div>
+
+          <div class="related-body">
+
+            <div class="related-name">
+              Paquete Premium Personalizado
+            </div>
+
+            <div class="related-price">
+              $1,200
+            </div>
+
+            <div class="related-note">
+              Personalizado
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       BUY BAR
+  ======================================================== -->
+
+  <div class="buy-bar">
+
+    <div class="buy-summary">
+
+      <small>
+        Precio
+      </small>
+
+      <strong id="stickyPrice">
+        $349
+      </strong>
+
+    </div>
+
+    <button
+      class="buy-button"
+      data-action="buy-now">
+
+      Comprar ahora
+
+    </button>
+
+  </div>
+
+  </div>
+  <!-- /#productView -->
+
+
+  <!-- =======================================================
+       CART
+  ======================================================== -->
+
+  <div
+    class="overlay"
+    id="overlay"
+    data-action="close-cart">
+  </div>
+
+
+  <aside
+    class="cart"
+    id="cart">
+
+
+    <div class="cart-head">
+
+      <h3>
+        Tu carrito
+      </h3>
+
+      <button
+        class="cart-close"
+        data-action="close-cart">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+    <ul
+      class="cart-items"
+      id="cartItems">
+    </ul>
+
+
+    <div
+      class="cart-total"
+      id="cartTotal">
+
+      Total: $0 MXN
+
+    </div>
+
+
+    <button
+      class="checkout"
+      data-action="checkout">
+
+      Continuar con la compra
+
+    </button>
+
+  </aside>
+
+
+  <!-- =======================================================
+       CHECKOUT MODAL
+  ======================================================== -->
+
+  <div
+    class="modal"
+    id="modal">
+
+
+    <div
+      class="modal-card"
+      id="modalCard">
+
+
+      <button
+        class="modal-close"
+        data-action="close-modal">
+
+        ×
+
+      </button>
+
+
+      <h2>
+        Finalizar compra
+      </h2>
+
+
+      <p
+        class="modal-note"
+        id="modalNote">
+
+        Completa tus datos para continuar.
+
+      </p>
+
+
+      <div class="field">
+
+        <label>
+          Nombre
+        </label>
+
+        <input
+          id="customerName"
+          type="text"
+          placeholder="Tu nombre">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Correo electrónico
+        </label>
+
+        <input
+          id="customerEmail"
+          type="email"
+          placeholder="tucorreo@email.com">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Teléfono / WhatsApp
+        </label>
+
+        <input
+          id="customerPhone"
+          type="tel"
+          placeholder="10 dígitos">
+
+      </div>
+
+
+      <button
+        class="pay-now"
+        data-action="simulate-payment">
+
+        Continuar al pago
+
+      </button>
+
+
+      <p
+        style="
+          font-size:10px;
+          color:#999;
+          text-align:center;
+          margin-top:9px;
+        ">
+
+        Demo. Antes de producción, conecta este botón
+        con tu procesador de pagos.
+
+      </p>
+
+
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
