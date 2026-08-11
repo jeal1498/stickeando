@@ -9,18 +9,21 @@
 }
 
 :root{
-  --yellow:#ffe600;
-  --blue:#3483fa;
-  --blue-dark:#2968c8;
-  --green:#00a650;
-  --orange:#ff7a1a;
-  --text:#333;
-  --muted:#666;
-  --light:#999;
-  --line:#e6e6e6;
-  --bg:#ebebeb;
+  /* Paleta Stickeando — Manual de Identidad Visual */
+  --primary:#C1B6FF;      /* Lavanda Digital — identidad, header, focus */
+  --action:#98FFD4;       /* Menta Suave — CTAs, botones de compra, confirmaciones */
+  --action-dark:#6FE6B8;  /* Menta Suave (hover/active) */
+  --accent:#FFD2B6;       /* Durazno Pastel — badges, pricing tags */
+  --text:#2D2352;         /* Morado Berenjena — sustituye al negro puro */
+  --muted:#6B6180;        /* Morado Berenjena atenuado, para texto secundario */
+  --light:#9992AD;        /* Morado Berenjena claro, para texto terciario */
+  --line:#E6E1FA;         /* Línea sutil con tinte lavanda */
+  --bg:#FAFAFF;           /* Blanco Nube — fondo estructural */
   --white:#fff;
   --danger:#e74c3c;
+
+  --font-heading:'Poppins','Quicksand','Nunito',sans-serif;
+  --font-body:'Inter','Roboto','Montserrat',sans-serif;
 }
 
 html{
@@ -30,7 +33,7 @@ html{
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:var(--font-body);
   line-height:1.4;
   padding-bottom:76px;
   -webkit-font-smoothing:antialiased;

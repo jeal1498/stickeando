@@ -67,7 +67,7 @@
 
   font-size:27px;
 
-  color:#777;
+  color:var(--muted);
 }
 
 .cart-items{
@@ -107,7 +107,7 @@
 .remove{
   background:transparent;
 
-  color:var(--blue);
+  color:var(--text);
 
   font-size:11px;
 
@@ -129,10 +129,15 @@
 
   border-radius:6px;
 
-  background:var(--blue);
+  background:var(--action);
 
-  color:#fff;
+  color:var(--text);
 
+  font-family:var(--font-heading);
   font-weight:800;
+}
+
+.checkout:hover{
+  background:var(--action-dark);
 }
 

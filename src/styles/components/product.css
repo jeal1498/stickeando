@@ -26,8 +26,8 @@
 }
 
 .badge-best{
-  background:var(--orange);
-  color:#fff;
+  background:var(--accent);
+  color:var(--text);
 
   padding:5px 8px;
 
@@ -38,7 +38,7 @@
 }
 
 .category{
-  color:#5d91d4;
+  color:var(--muted);
   font-size:13px;
 }
 
@@ -76,7 +76,7 @@
   border-radius:50%;
 
   background:#f7f7f7;
-  color:var(--blue);
+  color:var(--text);
 
   display:grid;
   place-items:center;
@@ -132,7 +132,7 @@
 }
 
 .stars{
-  color:var(--blue);
+  color:var(--text);
 
   font-size:20px;
 
@@ -140,7 +140,7 @@
 }
 
 .rating-count{
-  color:#222;
+  color:var(--text);
 }
 
 
@@ -179,7 +179,7 @@
 .package{
   min-width:105px;
 
-  border:1px solid #bbb;
+  border:1px solid var(--line);
 
   border-radius:9px;
 
@@ -189,7 +189,7 @@
 
   text-align:center;
 
-  color:#333;
+  color:var(--text);
 
   position:relative;
 }
@@ -202,7 +202,7 @@
 .package small{
   display:block;
 
-  color:#777;
+  color:var(--muted);
 
   font-size:11px;
 
@@ -210,7 +210,7 @@
 }
 
 .package.selected{
-  border:2px solid var(--blue);
+  border:2px solid var(--primary);
   padding:10px 9px;
 }
 
@@ -222,7 +222,7 @@
   right:5px;
   top:4px;
 
-  color:var(--blue);
+  color:var(--text);
 
   font-weight:800;
   font-size:13px;
@@ -236,7 +236,7 @@
 .price-old{
   font-size:16px;
 
-  color:#777;
+  color:var(--muted);
 
   text-decoration:line-through;
 
@@ -259,14 +259,15 @@
   line-height:1;
 
   font-weight:700;
+  font-family:var(--font-heading);
 
-  color:#111;
+  color:var(--text);
 }
 
 .discount{
-  background:var(--green);
+  background:var(--accent);
 
-  color:#fff;
+  color:var(--text);
 
   border-radius:4px;
 
@@ -282,15 +283,15 @@
 
   margin-top:8px;
 
-  color:#555;
+  color:var(--muted);
 }
 
 .wallet{
   margin-top:14px;
 
-  background:#dceaff;
+  background:var(--line);
 
-  color:#4c87d5;
+  color:var(--text);
 
   border-radius:4px;
 
@@ -317,7 +318,7 @@
 }
 
 .benefit-icon{
-  color:var(--green);
+  color:var(--text);
 
   font-size:18px;
 
@@ -326,13 +327,13 @@
 
 .benefit strong{
   font-size:14px;
-  color:var(--green);
+  color:var(--text);
 }
 
 .benefit p{
   font-size:12px;
 
-  color:#666;
+  color:var(--muted);
 
   margin-top:2px;
 }
@@ -349,7 +350,7 @@
 .payments-title{
   font-size:16px;
 
-  color:#4385d5;
+  color:var(--text);
 
   font-weight:700;
 
@@ -383,12 +384,12 @@
 
   font-weight:800;
 
-  color:#555;
+  color:var(--muted);
 }
 
 .pay-more{
-  background:#e5eefc;
-  color:#4c87d5;
+  background:var(--line);
+  color:var(--text);
 }
 
 
@@ -412,7 +413,9 @@
 .section h2{
   font-size:19px;
 
-  font-weight:500;
+  font-family:var(--font-heading);
+  font-weight:700;
+  color:var(--text);
 
   margin-bottom:14px;
 }
@@ -428,7 +431,7 @@
 .feature-list li{
   font-size:14px;
 
-  color:#444;
+  color:var(--muted);
 
   padding-left:22px;
 
@@ -442,7 +445,7 @@
 
   left:0;
 
-  color:var(--green);
+  color:var(--text);
 
   font-weight:800;
 }
@@ -450,7 +453,7 @@
 .description{
   font-size:14px;
 
-  color:#555;
+  color:var(--muted);
 
   line-height:1.65;
 }
@@ -523,7 +526,7 @@
 .related-note{
   font-size:10px;
 
-  color:var(--green);
+  color:var(--text);
 
   font-weight:700;
 
@@ -571,7 +574,7 @@
 .buy-summary small{
   display:block;
 
-  color:#777;
+  color:var(--muted);
 
   font-size:10px;
 }
@@ -579,7 +582,7 @@
 .buy-summary strong{
   font-size:19px;
 
-  color:#111;
+  color:var(--text);
 }
 
 .buy-button{
@@ -589,16 +592,17 @@
 
   border-radius:6px;
 
-  background:var(--blue);
+  background:var(--action);
 
-  color:#fff;
+  color:var(--text);
 
+  font-family:var(--font-heading);
   font-weight:800;
 
   font-size:14px;
 }
 
 .buy-button:hover{
-  background:var(--blue-dark);
+  background:var(--action-dark);
 }
 

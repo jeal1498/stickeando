@@ -50,7 +50,7 @@
 
   font-size:26px;
 
-  color:#888;
+  color:var(--light);
 }
 
 .modal-card h2{
@@ -62,7 +62,7 @@
 .modal-note{
   font-size:12px;
 
-  color:#666;
+  color:var(--muted);
 
   margin-bottom:18px;
 }
@@ -98,7 +98,7 @@
 }
 
 .field input:focus{
-  border-color:var(--blue);
+  border-color:var(--primary);
 }
 
 .pay-now{
@@ -108,10 +108,15 @@
 
   border-radius:6px;
 
-  background:var(--blue);
+  background:var(--action);
 
-  color:#fff;
+  color:var(--text);
 
+  font-family:var(--font-heading);
   font-weight:800;
+}
+
+.pay-now:hover{
+  background:var(--action-dark);
 }
 
