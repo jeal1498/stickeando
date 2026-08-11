@@ -2,14 +2,7 @@
    HOME / FEED
 ========================================================= */
 
-.feed-brand{
-  font-size:17px;font-weight:800;font-family:var(--font-heading);color:var(--text);
-  white-space:nowrap;display:none;
-}
-
-@media(min-width:420px){
-  .feed-brand{display:block;}
-}
+/* feed-brand: reemplazado por .brand-logo (logo real) en layout.css */
 
 .feed-cart-btn{
   position:relative;
