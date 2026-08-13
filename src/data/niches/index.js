@@ -1,11 +1,10 @@
 import psicologos from './psicologos.js';
+import dentistas from './dentistas.js';
 
 // Cada nuevo nicho se agrega aquí con su import correspondiente.
-// Ejemplo al agregar uno nuevo:
-//   import dentistas from './dentistas.js';
-//   export const niches = { psicologos, dentistas };
 export const niches = {
-  psicologos
+  psicologos,
+  dentistas
 };
 
 export const DEFAULT_NICHE_SLUG = 'psicologos';
