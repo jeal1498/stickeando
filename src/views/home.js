@@ -1,67 +1,38 @@
-import { addItem } from '../state/cart.js';
-import { updateCart } from '../components/cart-drawer.js';
-import { getNiche } from '../data/niches/index.js';
-import { money } from '../utils/format.js';
+import { nichesList } from '../data/niches/index.js';
+import { initHeroCarousel } from '../components/hero-carousel.js';
 
-function feedCardHTML(product) {
-  const stickers = product.feedEmojis.map(e => `<span>${e}</span>`).join('');
-  const oldPrice = product.oldPrice
-    ? `<span class="feed-old-price">$${product.oldPrice}</span>`
-    : '';
-  const discount = product.discount
-    ? `<span class="feed-discount-tag">${product.discount}</span>`
-    : '';
-
+function nichoCardHTML(nicho, index) {
   return `
-    <a class="feed-card" href="#" data-id="${product.id}" data-action="go-to-product">
-      <div class="feed-card-art">
-        <div class="feed-art-stickers" aria-hidden="true">${stickers}</div>
-        <button type="button" class="feed-quick-add" data-id="${product.id}" aria-label="Agregar ${product.short} al carrito">＋</button>
-      </div>
-      <div class="feed-card-body">
-        <h3>${product.name}</h3>
-        <div class="feed-price-row">
-          <span class="feed-price">${money(product.price)}<sup>00</sup></span>
-          ${oldPrice}
-        </div>
-        ${discount}
-        <div class="feed-spacer"></div>
-        <div class="feed-digital-tag">Entrega digital inmediata</div>
-      </div>
-    </a>
+    <div class="nicho-card" data-action="go-to-detalle" data-index="${index}">
+      <span class="emoji-big">${nicho.emoji}</span>
+      <div class="nombre">${nicho.nombre}</div>
+      <span class="fase">${nicho.fase.replace('-', ' ').toUpperCase()}</span>
+    </div>
   `;
 }
 
-// Pinta el feed con los productos del nicho activo y el título correspondiente.
-export function renderFeed() {
-  const niche = getNiche();
-  const feedTitle = document.getElementById('feedTitle');
-  if (feedTitle) {
-    feedTitle.innerHTML = `Recomendado para ti en <strong>${niche.feedSubtitle}</strong>`;
-  }
+export function renderNichos(fase = 'todos') {
+  const grid = document.getElementById('nichos-grid');
+  const filtered =
+    fase === 'todos' ? nichesList : nichesList.filter(n => n.fase === fase);
 
-  const feed = document.querySelector('.feed');
-  feed.innerHTML = Object.values(niche.products).map(feedCardHTML).join('');
+  grid.innerHTML = filtered
+    .map(nicho => nichoCardHTML(nicho, nichesList.indexOf(nicho)))
+    .join('');
 }
 
-export function initHomeFeed() {
-  renderFeed();
-
-  document.querySelectorAll('.feed-quick-add').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      addItem(btn.dataset.id);
-      updateCart();
-
-      btn.classList.add('added');
-      btn.textContent = '✓';
-
-      setTimeout(() => {
-        btn.classList.remove('added');
-        btn.textContent = '＋';
-      }, 900);
+export function initFiltros() {
+  document.querySelectorAll('.filtro-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderNichos(btn.dataset.fase);
     });
   });
+}
+
+export function initHome() {
+  renderNichos();
+  initHeroCarousel(nichesList);
+  initFiltros();
 }

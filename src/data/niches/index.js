@@ -43,15 +43,14 @@ export const niches = {
   fotografos
 };
 
-export const DEFAULT_NICHE_SLUG = 'psicologos';
+// Lista ordenada de nichos (mismo orden que las claves de arriba). El índice
+// dentro de este array es lo que usa el router para ir a la vista de detalle.
+export const nichesList = Object.values(niches);
 
-// Slug activo: se lee de ?n=slug en la URL (ej. stickeando.app/?n=dentistas).
-// Si no hay slug o no existe ese nicho, cae al nicho por default.
-export function getCurrentSlug() {
-  const param = new URLSearchParams(window.location.search).get('n');
-  return param && niches[param] ? param : DEFAULT_NICHE_SLUG;
+export function getNicheByIndex(index) {
+  return nichesList[index];
 }
 
-export function getNiche(slug = getCurrentSlug()) {
-  return niches[slug] || niches[DEFAULT_NICHE_SLUG];
+export function getNiche(slug) {
+  return niches[slug];
 }

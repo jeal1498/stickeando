@@ -1,38 +1,28 @@
 import './styles/main.css';
 
-import { initGallery, toggleZoom } from './components/gallery.js';
+import { initHome } from './views/home.js';
 import {
-  selectPackage,
-  toggleFavorite,
-  buyNow,
-  handleShareWhatsApp,
-  handleShareProduct
-} from './views/product.js';
-import { initHomeFeed } from './views/home.js';
-import { openCart, closeCart, updateCart, removeCartItem, checkout } from './components/cart-drawer.js';
-import { openCheckout, closeModal, simulatePayment } from './components/checkout-modal.js';
-import { goToProduct, goBack } from './router.js';
+  mostrarDetalle,
+  seleccionarPlan,
+  comprar,
+  descargarMuestra,
+  verDemo
+} from './views/detalle.js';
+import { cerrarModal, irAPagar, initModalResumen } from './components/modal-resumen.js';
+import { goBack, initRouter } from './router.js';
 
 // Mapa central de acciones: cada elemento interactivo del HTML lleva un
 // atributo data-action en vez de onclick inline. Un solo listener delegado
-// en document cubre tanto el markup estático como el generado dinámicamente
-// (items del carrito, botón de "pedido creado").
+// en document cubre tanto el markup estático como el generado dinámicamente.
 const actions = {
-  'open-cart': openCart,
-  'close-cart': closeCart,
   'go-back': goBack,
-  'toggle-zoom': toggleZoom,
-  'share-whatsapp': handleShareWhatsApp,
-  'share-product': handleShareProduct,
-  'toggle-favorite': toggleFavorite,
-  'buy-now': buyNow,
-  'checkout': checkout,
-  'close-modal': closeModal,
-  'simulate-payment': simulatePayment,
-  'reload': () => location.reload(),
-  'go-to-product': el => goToProduct(el.dataset.id),
-  'select-package': el => selectPackage(el.dataset.id),
-  'remove-cart': el => removeCartItem(el.dataset.id)
+  'go-to-detalle': el => mostrarDetalle(Number(el.dataset.index)),
+  'select-plan': el => seleccionarPlan(el.dataset.plan),
+  'comprar': comprar,
+  'descargar-muestra': descargarMuestra,
+  'ver-demo': verDemo,
+  'close-modal-resumen': cerrarModal,
+  'ir-a-pagar': irAPagar
 };
 
 document.addEventListener('click', e => {
@@ -45,6 +35,6 @@ document.addEventListener('click', e => {
   handler.length ? handler(target) : handler();
 });
 
-initGallery();
-initHomeFeed();
-updateCart();
+initModalResumen();
+initHome();
+initRouter();
