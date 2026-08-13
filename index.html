@@ -68,70 +68,10 @@
 
     <main class="container feed-wrap">
 
-      <p class="feed-title">Recomendado para ti en <strong>Stickers para WhatsApp</strong></p>
+      <p class="feed-title" id="feedTitle">Recomendado para ti en <strong>Stickers para WhatsApp</strong></p>
 
-      <div class="feed">
-
-        <!-- PRODUCTO: BÁSICO -->
-        <a class="feed-card" href="#" data-id="basico" data-action="go-to-product">
-          <div class="feed-card-art">
-            <div class="feed-art-stickers" aria-hidden="true">
-              <span>💬</span><span>😊</span><span>👌</span>
-              <span>✨</span><span>🙌</span><span>😅</span>
-            </div>
-            <button type="button" class="feed-quick-add" data-id="basico" aria-label="Agregar Básico al carrito">＋</button>
-          </div>
-          <div class="feed-card-body">
-            <h3>Paquete Básico de Stickers</h3>
-            <div class="feed-price-row">
-              <span class="feed-price">$149<sup>00</sup></span>
-            </div>
-            <div class="feed-spacer"></div>
-            <div class="feed-digital-tag">Entrega digital inmediata</div>
-          </div>
-        </a>
-
-        <!-- PRODUCTO: PROFESIONAL -->
-        <a class="feed-card" href="#" data-id="profesional" data-action="go-to-product">
-          <div class="feed-card-art">
-            <div class="feed-art-stickers" aria-hidden="true">
-              <span>🧠</span><span>💡</span><span>📌</span>
-              <span>🗓️</span><span>✅</span><span>💬</span>
-            </div>
-            <button type="button" class="feed-quick-add" data-id="profesional" aria-label="Agregar Profesional al carrito">＋</button>
-          </div>
-          <div class="feed-card-body">
-            <h3>Paquete Profesional +30 Stickers para WhatsApp</h3>
-            <div class="feed-price-row">
-              <span class="feed-price">$349<sup>00</sup></span>
-              <span class="feed-old-price">$498</span>
-            </div>
-            <span class="feed-discount-tag">30% OFF</span>
-            <div class="feed-spacer"></div>
-            <div class="feed-digital-tag">Entrega digital inmediata</div>
-          </div>
-        </a>
-
-        <!-- PRODUCTO: PREMIUM -->
-        <a class="feed-card" href="#" data-id="premium" data-action="go-to-product">
-          <div class="feed-card-art">
-            <div class="feed-art-stickers" aria-hidden="true">
-              <span>🐱</span><span>🎨</span><span>⭐</span>
-              <span>💜</span><span>🐾</span><span>✨</span>
-            </div>
-            <button type="button" class="feed-quick-add" data-id="premium" aria-label="Agregar Premium al carrito">＋</button>
-          </div>
-          <div class="feed-card-body">
-            <h3>Paquete Premium Personalizado</h3>
-            <div class="feed-price-row">
-              <span class="feed-price">$1,200<sup>00</sup></span>
-            </div>
-            <div class="feed-spacer"></div>
-            <div class="feed-digital-tag">Entrega digital inmediata</div>
-          </div>
-        </a>
-
-      </div>
+      <!-- El feed se pinta dinámicamente en home.js según el nicho activo (?n=slug) -->
+      <div class="feed"></div>
     </main>
 
   </div>

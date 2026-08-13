@@ -1,4 +1,6 @@
-import { products } from '../data/products.js';
+import { getNiche } from '../data/niches/index.js';
+
+const { products } = getNiche();
 import { getCart, addItem, removeItem, getCartTotal } from '../state/cart.js';
 import { money } from '../utils/format.js';
 import { openCheckout } from './checkout-modal.js';

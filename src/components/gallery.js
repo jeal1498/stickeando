@@ -1,9 +1,9 @@
+import { getNiche } from '../data/niches/index.js';
+
+const nicheGalleryEmojis = getNiche().galleryEmojis;
+
 const galleryItems = [
-  { type: 'image', emoji: '🧠' },
-  { type: 'image', emoji: '😂' },
-  { type: 'image', emoji: '❤️' },
-  { type: 'image', emoji: '👍' },
-  { type: 'image', emoji: '🙌' },
+  ...nicheGalleryEmojis.slice(0, 5).map(emoji => ({ type: 'image', emoji })),
   { type: 'video' }
 ];
 

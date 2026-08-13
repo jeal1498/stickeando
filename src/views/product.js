@@ -1,7 +1,10 @@
-import { products, DEFAULT_PRODUCT_ID } from '../data/products.js';
+import { getNiche } from '../data/niches/index.js';
 import { money } from '../utils/format.js';
 import { shareWhatsApp, shareProduct } from '../utils/share.js';
 import { openCheckout } from '../components/checkout-modal.js';
+
+const niche = getNiche();
+const { products, DEFAULT_PRODUCT_ID } = niche;
 
 let selected = products[DEFAULT_PRODUCT_ID];
 
@@ -49,14 +52,9 @@ export function selectPackage(id) {
   });
 
   const stickers = document.getElementById('previewStickers');
-  stickers.innerHTML = `
-    <div class="sticker">${selected.emoji}</div>
-    <div class="sticker">😂</div>
-    <div class="sticker">❤️</div>
-    <div class="sticker">👍</div>
-    <div class="sticker">🙌</div>
-    <div class="sticker">😊</div>
-  `;
+  stickers.innerHTML = selected.feedEmojis
+    .map(emoji => `<div class="sticker">${emoji}</div>`)
+    .join('');
 }
 
 export function toggleFavorite() {
