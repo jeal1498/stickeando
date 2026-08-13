@@ -13,53 +13,53 @@ export default {
   products: {
     basico: {
       id: 'basico',
-      name: 'Paquete Básico de Stickers para Psicólogos',
+      name: 'Stickers para Psicólogos · Paquete Básico',
       short: 'Básico',
       price: 149,
       oldPrice: null,
       discount: null,
       emoji: '🧠',
       feedEmojis: ['🧠', '📅', '💚', '👍', '🙌', '✨'],
-      feature1: '5 stickers para confirmar y recordar citas.',
-      feature2: 'Diseños cálidos, pensados para consulta.',
-      feature3: 'Entrega digital después de tu compra.',
-      feature4: 'Compra única, sin suscripciones.',
+      feature1: '5 stickers para confirmar y recordar sesiones.',
+      feature2: 'Comunicación cálida sin perder el tono profesional.',
+      feature3: 'Entrega digital inmediata, lista para instalar en WhatsApp.',
+      feature4: 'Pago único, sin mensualidades ni letras chiquitas.',
       description:
-        'El paquete Básico es una forma sencilla de darle un toque más cercano y profesional a tus mensajes con pacientes por WhatsApp: confirmaciones de sesión, recordatorios y mensajes de apoyo.'
+        'Ideal si estás empezando tu consultorio y quieres dejar de escribir "confirmamos tu cita" desde cero cada vez. Con este set respondes más rápido, tus pacientes sienten calidez desde el primer mensaje y tu WhatsApp se ve más profesional sin necesitar diseñador ni experiencia técnica.'
     },
 
     profesional: {
       id: 'profesional',
-      name: 'Paquete Profesional +30 Stickers para Psicólogos',
+      name: 'Stickers para Psicólogos · +30 Diseños Profesionales',
       short: 'Profesional',
       price: 349,
       oldPrice: 498,
       discount: '30% OFF',
       emoji: '🧠',
       feedEmojis: ['🧠', '📅', '💚', '🕊️', '✅', '💬'],
-      feature1: 'Más de 30 stickers para tu consultorio.',
-      feature2: 'Recordatorios de sesión, confirmaciones y frases de contención.',
-      feature3: 'Entrega digital después de tu compra.',
-      feature4: 'Sin costos de envío ni cargos recurrentes.',
+      feature1: '+30 stickers: confirmaciones, recordatorios, contención y seguimiento.',
+      feature2: 'Pensados para el día a día real de un consultorio de psicología.',
+      feature3: 'Compatibles con WhatsApp y WhatsApp Business.',
+      feature4: 'Entrega digital inmediata, sin envíos ni esperas.',
       description:
-        'Comunícate con tus pacientes de forma más cálida y profesional. Este paquete incluye stickers para confirmar citas, recordar sesiones, dar seguimiento entre consultas y transmitir cercanía sin perder la seriedad de tu práctica clínica.'
+        'El paquete más elegido por psicólogos y terapeutas que atienden pacientes por WhatsApp todos los días. Incluye stickers para agendar, confirmar y recordar sesiones, frases de acompañamiento entre consultas, y mensajes de cierre y seguimiento — todo con un diseño cálido, profesional y coherente para tu consultorio. Menos tiempo escribiendo, más presencia terapéutica en cada conversación.'
     },
 
     premium: {
       id: 'premium',
-      name: 'Paquete Premium Personalizado para tu Consultorio',
+      name: 'Stickers Personalizados para tu Consultorio · Premium',
       short: 'Premium',
       price: 1200,
       oldPrice: null,
       discount: null,
       emoji: '🕊️',
       feedEmojis: ['🕊️', '🎨', '🧠', '💜', '📅', '✨'],
-      feature1: 'Diseño personalizado con la identidad de tu consultorio.',
-      feature2: 'Frases y símbolos adaptados a tu enfoque terapéutico.',
-      feature3: 'Entrega digital después de la aprobación.',
-      feature4: 'Producto personalizado de una sola compra.',
+      feature1: 'Set 100% personalizado con tu paleta, logo o mascota.',
+      feature2: 'Frases adaptadas a tu enfoque terapéutico y tono de voz.',
+      feature3: 'Revisión y ajustes antes de la entrega final.',
+      feature4: 'Producto único de una sola compra, sin recurrencias.',
       description:
-        'El paquete Premium está pensado para psicólogos y consultorios que quieren un set de stickers 100% personalizado, con su paleta de colores, logo o mascota, para reforzar su marca en cada conversación de WhatsApp.'
+        'Para consultorios y psicólogos que quieren que su marca se reconozca en cada mensaje. Diseñamos un paquete de stickers exclusivo con tu identidad visual — colores, logo, mascota o iniciales — y frases alineadas a cómo hablas con tus pacientes. Tu consultorio, con personalidad propia, en cada chat de WhatsApp.'
     }
   }
 };
