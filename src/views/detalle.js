@@ -40,41 +40,6 @@ function detalleContenidoHTML(nicho, planData) {
       </div>
     </div>
 
-    <!-- BENEFICIOS -->
-    <div class="beneficios">
-      <div class="beneficio-item">
-        <span class="check-icon">✓</span>
-        <div><span class="beneficio-texto">Diseño profesional</span><span class="beneficio-desc">Estilo kawaii y tono empático que humaniza tus mensajes</span></div>
-      </div>
-      <div class="beneficio-item">
-        <span class="check-icon">✓</span>
-        <div><span class="beneficio-texto">Formato listo para WhatsApp</span><span class="beneficio-desc">Archivos .wastickers compatibles con Sticker Maker</span></div>
-      </div>
-      <div class="beneficio-item">
-        <span class="check-icon">✓</span>
-        <div><span class="beneficio-texto">Entrega inmediata</span><span class="beneficio-desc">Recibe el enlace de descarga por correo al instante</span></div>
-      </div>
-    </div>
-
-    <!-- TESTIMONIOS (visibles, no colapsados: generan confianza antes del precio) -->
-    <div class="testimonios">
-      <h3>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></h3>
-      <div class="testimonio-grid">
-        <div class="testimonio-item">
-          <div class="avatar">👩</div>
-          <div><div class="texto">"Mis pacientes me dicen que mis mensajes ahora son mucho más cálidos. ¡Y nunca olvidan sus citas!"</div><div class="autor">— Laura G., Psicóloga</div></div>
-        </div>
-        <div class="testimonio-item">
-          <div class="avatar">👨</div>
-          <div><div class="texto">"El paquete Experto es increíble. Mis clientes se sienten más atendidos. Muy recomendado."</div><div class="autor">— Carlos R., Agente inmobiliario</div></div>
-        </div>
-        <div class="testimonio-item">
-          <div class="avatar">👩‍⚕️</div>
-          <div><div class="texto">"Los stickers son un éxito en mi consulta. Los pacientes los adoran y agradecen los recordatorios."</div><div class="autor">— Dra. Ana, Dentista</div></div>
-        </div>
-      </div>
-    </div>
-
     <!-- PLANES -->
     <div class="plan-selector" id="plan-selector">
       <div class="plan-card" data-plan="basic" data-action="select-plan">
@@ -103,6 +68,22 @@ function detalleContenidoHTML(nicho, planData) {
       <span class="sello">Soporte 24/7</span>
     </div>
 
+    <!-- BENEFICIOS -->
+    <div class="beneficios">
+      <div class="beneficio-item">
+        <span class="check-icon">✓</span>
+        <div><span class="beneficio-texto">Diseño profesional</span><span class="beneficio-desc">Estilo kawaii y tono empático que humaniza tus mensajes</span></div>
+      </div>
+      <div class="beneficio-item">
+        <span class="check-icon">✓</span>
+        <div><span class="beneficio-texto">Formato listo para WhatsApp</span><span class="beneficio-desc">Archivos .wastickers compatibles con Sticker Maker</span></div>
+      </div>
+      <div class="beneficio-item">
+        <span class="check-icon">✓</span>
+        <div><span class="beneficio-texto">Entrega inmediata</span><span class="beneficio-desc">Recibe el enlace de descarga por correo al instante</span></div>
+      </div>
+    </div>
+
     <!-- QUÉ INCLUYE -->
     <div class="que-incluye">
       <h3>📦 ¿Qué incluye?</h3>
@@ -111,7 +92,7 @@ function detalleContenidoHTML(nicho, planData) {
       </ul>
     </div>
 
-    <!-- MUESTRA GRATUITA -->
+    <!-- MUESTRA GRATUITA (cerca del CTA: gratificación instantánea) -->
     <div class="muestra-gratuita">
       <button class="btn-muestra" data-action="descargar-muestra">
         🎁 Descarga una muestra gratis
@@ -119,7 +100,25 @@ function detalleContenidoHTML(nicho, planData) {
       </button>
     </div>
 
-    <!-- A partir de aquí, colapsado por defecto -->
+    <!-- A partir de aquí, todo colapsado por defecto -->
+    <details class="seccion-colapsable">
+      <summary>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></summary>
+      <div class="testimonio-grid">
+        <div class="testimonio-item">
+          <div class="avatar">👩</div>
+          <div><div class="texto">"Mis pacientes me dicen que mis mensajes ahora son mucho más cálidos. ¡Y nunca olvidan sus citas!"</div><div class="autor">— Laura G., Psicóloga</div></div>
+        </div>
+        <div class="testimonio-item">
+          <div class="avatar">👨</div>
+          <div><div class="texto">"El paquete Experto es increíble. Mis clientes se sienten más atendidos. Muy recomendado."</div><div class="autor">— Carlos R., Agente inmobiliario</div></div>
+        </div>
+        <div class="testimonio-item">
+          <div class="avatar">👩‍⚕️</div>
+          <div><div class="texto">"Los stickers son un éxito en mi consulta. Los pacientes los adoran y agradecen los recordatorios."</div><div class="autor">— Dra. Ana, Dentista</div></div>
+        </div>
+      </div>
+    </details>
+
     <details class="seccion-colapsable">
       <summary>🎥 Mira cómo funcionan en WhatsApp</summary>
       <div class="video-placeholder" data-action="ver-demo">
