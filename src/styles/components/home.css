@@ -1,0 +1,276 @@
+    /* ========== HERO CON CARRUSEL DE EMOJIS ========== */
+    .hero {
+      padding: 1.5rem 0 1.2rem;
+      background: linear-gradient(135deg, #fce8e0 0%, #f5e0e8 100%);
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-text h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4f3a38;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .hero-carousel-wrapper {
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.4);
+      backdrop-filter: blur(4px);
+      padding: 0.8rem;
+      cursor: pointer;
+    }
+    .hero-carousel-wrapper .click-hint {
+      position: absolute;
+      bottom: 0.3rem;
+      right: 0.8rem;
+      background: rgba(0,0,0,0.4);
+      color: white;
+      font-size: 0.6rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      backdrop-filter: blur(2px);
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+    .hero-carousel {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      touch-action: pan-x;
+    }
+    .hero-carousel .hero-slide {
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      text-align: center;
+      user-select: none;
+      -webkit-user-select: none;
+      transition: transform 0.15s;
+    }
+    .hero-carousel .hero-slide:active {
+      transform: scale(0.95);
+    }
+    .hero-carousel .hero-slide .emoji {
+      font-size: 4.5rem;
+      line-height: 1.2;
+    }
+    .hero-carousel .hero-slide .nombre {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #3d2c2b;
+      margin-top: 0.2rem;
+    }
+    .hero-carousel .hero-slide .fase {
+      font-size: 0.7rem;
+      color: #9a7b78;
+      background: rgba(255,255,255,0.6);
+      padding: 0.1rem 0.8rem;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 0.1rem;
+    }
+
+    /* ========== SECCIONES CÓMO FUNCIONA Y FAQ (inicio) ========== */
+    .info-section {
+      padding: 1rem 1.2rem 0.5rem;
+    }
+    .info-section h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      color: #4a3b3a;
+      margin-bottom: 1rem;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 0 0 1.2rem;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: white;
+      border-radius: 30px;
+      padding: 0.8rem 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .step .number {
+      background: #f5d4d4;
+      width: 44px;
+      height: 44px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #4d2a2a;
+      flex-shrink: 0;
+    }
+    .step .step-text h3 {
+      font-size: 1.1rem;
+    }
+    .step .step-text p {
+      font-size: 0.9rem;
+      color: #6b5552;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 24px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.6rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .faq-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #4f3a38;
+    }
+
+    /* ========== CATÁLOGO ========== */
+    .catalogo-section {
+      padding: 0 1.2rem 0.5rem;
+    }
+    .catalogo-section .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #4a3b3a;
+      text-align: center;
+    }
+    .catalogo-section .subtitle {
+      text-align: center;
+      color: #6b5552;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .nicho-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .nicho-card {
+      background: white;
+      border-radius: 30px;
+      padding: 1.2rem 0.5rem;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      transition: 0.15s;
+      border: 3px solid transparent;
+      cursor: pointer;
+    }
+    .nicho-card:active {
+      transform: scale(0.96);
+      border-color: #fccfcf;
+    }
+    .nicho-card .emoji-big {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .nicho-card .nombre {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .nicho-card .fase {
+      font-size: 0.65rem;
+      color: #9a7b78;
+      background: #f3e8e4;
+      padding: 0.15rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 0.2rem;
+    }
+
+    .filtros {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 0.5rem;
+      padding: 0.5rem 0 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .filtros::-webkit-scrollbar {
+      display: none;
+    }
+    .filtro-btn {
+      flex: 0 0 auto;
+      background: #f3e8e4;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #4d3a38;
+      cursor: pointer;
+      transition: 0.15s;
+      white-space: nowrap;
+    }
+    .filtro-btn:active, .filtro-btn.active {
+      background: #dbb5b0;
+      color: white;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #f5e8e4;
+      padding: 0.8rem 1.2rem;
+      margin-top: 2rem;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      text-align: center;
+    }
+    .footer-inner .copy {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #4d3a38;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 1.2rem;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: #4d3a38;
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    .mt-2 { margin-top: 1.5rem; }
+    .hidden { display: none; }
+

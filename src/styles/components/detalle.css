@@ -1,0 +1,560 @@
+    /* ========== GALERÍA CARRUSEL INFINITO ========== */
+    .galeria-container {
+      position: relative;
+      padding: 0.8rem 1.2rem 0.4rem;
+    }
+    .galeria-carousel-wrapper {
+      overflow: hidden;
+      border-radius: 16px;
+      background: #fcf8f6;
+      position: relative;
+    }
+    .galeria-carousel {
+      display: flex;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      touch-action: pan-x;
+    }
+    .galeria-carousel .sticker-slide {
+      flex: 0 0 100%;
+      aspect-ratio: 1 / 1;
+      background: #f3e8e4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .galeria-carousel .sticker-slide .emoji {
+      font-size: 4.2rem;
+      line-height: 1.2;
+    }
+    .galeria-carousel .sticker-slide .frase {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #3d2c2b;
+      text-align: center;
+      margin-top: 0.3rem;
+      line-height: 1.2;
+      max-width: 90%;
+    }
+    .galeria-carousel .sticker-slide .funcion {
+      font-size: 0.75rem;
+      color: #9a7b78;
+      background: #e8deda;
+      padding: 0.15rem 0.8rem;
+      border-radius: 60px;
+      margin-top: 0.3rem;
+    }
+    .galeria-counter {
+      position: absolute;
+      bottom: 1.4rem;
+      right: 1.8rem;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.15rem 0.8rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ========== ENCABEZADO PRODUCTO (detalle) ========== */
+    .product-header {
+      padding: 0.6rem 1.2rem 0.2rem;
+    }
+    .product-header .top-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.2rem;
+      flex-wrap: wrap;
+      min-height: 1.8rem;
+    }
+    .badge-vendido {
+      background: #f5b0b0;
+      color: #2d1f1e;
+      padding: 0.15rem 0.8rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: inline-block;
+    }
+    .badge-vendido.hidden {
+      display: none;
+    }
+    .product-header .titulo-fav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.1rem 0 0.1rem;
+    }
+    .product-header .titulo-fav h1 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+    .product-header .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 1.1rem;
+      color: #f5b342;
+      margin: 0.1rem 0 0.3rem;
+    }
+    .product-header .rating .star {
+      color: #f5b342;
+    }
+
+    /* ========== SELECTOR DE PLANES ========== */
+    .plan-selector {
+      padding: 0.4rem 1.2rem 0.2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+    .plan-card {
+      background: #f9f4f0;
+      border-radius: 16px;
+      padding: 0.8rem 0.4rem;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: 0.15s;
+      cursor: pointer;
+      position: relative;
+    }
+    .plan-card.active {
+      border-color: #b87a7a;
+      background: #fff9f7;
+      box-shadow: 0 4px 12px rgba(184, 122, 122, 0.12);
+    }
+    .plan-card.active .check-mark {
+      display: block;
+    }
+    .plan-card .check-mark {
+      display: none;
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #b87a7a;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 0.7rem;
+      line-height: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .plan-card .plan-nombre {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #3d2c2b;
+    }
+    .plan-card .plan-desc {
+      font-size: 0.7rem;
+      color: #7a6360;
+      line-height: 1.2;
+      margin-top: 0.1rem;
+    }
+    .plan-card .plan-badge {
+      display: inline-block;
+      background: #e8deda;
+      font-size: 0.6rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 60px;
+      color: #5a4a47;
+      margin-top: 0.2rem;
+    }
+
+    /* ========== PRECIO ========== */
+    .price-block {
+      padding: 0.2rem 1.2rem 0.2rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: space-between;
+      background: rgba(255,248,245,0.5);
+      border-radius: 20px;
+      margin: 0 1.2rem 0.2rem;
+    }
+    .price-block .precio-grande {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #2d1f1e;
+      line-height: 1.1;
+    }
+    .price-block .precio-grande small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #7a6360;
+      margin-left: 0.3rem;
+    }
+    .price-block .iva {
+      font-size: 0.8rem;
+      color: #7a6360;
+      margin-top: 0.1rem;
+      width: 100%;
+    }
+    .price-block .btn-comprar-top {
+      background: #8fc9c9;
+      border: none;
+      border-radius: 60px;
+      padding: 0.6rem 1.6rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e3a3a;
+      box-shadow: 0 4px 0 #6ba3a3, 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.08s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .price-block .btn-comprar-top:active {
+      transform: translateY(4px);
+      box-shadow: 0 0px 0 #6ba3a3, 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Política de no reembolso */
+    .no-refund-policy {
+      padding: 0 1.2rem 0.4rem;
+      font-size: 0.8rem;
+      color: #7a6360;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .no-refund-policy strong {
+      color: #2d1f1e;
+    }
+    .no-refund-policy .sello {
+      background: #e8deda;
+      padding: 0.1rem 0.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.7rem;
+    }
+
+    /* ========== LISTAS DE VALOR ========== */
+    .beneficios {
+      padding: 0.2rem 1.2rem 0.4rem;
+    }
+    .beneficios .beneficio-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 0.6rem;
+    }
+    .beneficios .beneficio-item .check-icon {
+      color: #b87a7a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      min-width: 1.4rem;
+    }
+    .beneficios .beneficio-item .beneficio-texto {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .beneficios .beneficio-item .beneficio-desc {
+      font-weight: 400;
+      color: #7a6360;
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    /* Qué incluye */
+    .que-incluye {
+      padding: 0.2rem 1.2rem 0.4rem;
+    }
+    .que-incluye h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .que-incluye ul {
+      list-style: none;
+      padding: 0;
+    }
+    .que-incluye li {
+      padding: 0.2rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .que-incluye li::before {
+      content: "✓";
+      color: #b87a7a;
+      font-weight: 700;
+    }
+
+    /* ========== DESCRIPCIÓN ========== */
+    .descripcion {
+      padding: 0.4rem 1.2rem 0.6rem;
+    }
+    .descripcion h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .descripcion p {
+      color: #4f3a38;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ========== TESTIMONIOS ========== */
+    .testimonios {
+      padding: 0.4rem 1.2rem 0.8rem;
+    }
+    .testimonios h3 {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .testimonio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .testimonio-item {
+      background: #fcf8f6;
+      border-radius: 16px;
+      padding: 0.6rem 1rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      border-left: 4px solid #b87a7a;
+    }
+    .testimonio-item .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #e8deda;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: #3d2c2b;
+    }
+    .testimonio-item .texto {
+      font-size: 0.9rem;
+      color: #3d2c2b;
+      line-height: 1.4;
+    }
+    .testimonio-item .autor {
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #7a6360;
+      margin-top: 0.2rem;
+    }
+    .contador-compras {
+      display: inline-block;
+      background: #e8deda;
+      padding: 0.1rem 0.8rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      color: #3d2c2b;
+      font-weight: 600;
+      margin-left: 0.4rem;
+    }
+
+    /* ========== VIDEO DEMOSTRATIVO ========== */
+    .video-demo {
+      padding: 0.4rem 1.2rem 0.8rem;
+    }
+    .video-demo h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .video-demo .video-placeholder {
+      background: #282120;
+      border-radius: 16px;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M8 5v14l11-7z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 48px;
+      background-color: #1a1515;
+      cursor: pointer;
+    }
+    .video-demo .video-placeholder span {
+      background: rgba(0,0,0,0.5);
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.8rem;
+    }
+
+    /* ========== MUESTRA GRATUITA ========== */
+    .muestra-gratuita {
+      padding: 0.2rem 1.2rem 0.6rem;
+    }
+    .muestra-gratuita .btn-muestra {
+      background: #f0e8e4;
+      border: 2px dashed #b87a7a;
+      border-radius: 60px;
+      padding: 0.8rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #3d2c2b;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: 0.15s;
+    }
+    .muestra-gratuita .btn-muestra:active {
+      transform: scale(0.96);
+      background: #dccfca;
+    }
+
+    /* ========== CROSS-SELLING ========== */
+    .cross-selling {
+      padding: 0.4rem 1.2rem 0.8rem;
+    }
+    .cross-selling h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .cross-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 0.2rem 0.2rem 0.6rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .cross-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .cross-card {
+      flex: 0 0 140px;
+      background: #fcf8f6;
+      border-radius: 16px;
+      padding: 0.8rem 0.4rem;
+      text-align: center;
+      scroll-snap-align: start;
+      border: 1px solid #f0e8e4;
+      cursor: pointer;
+    }
+    .cross-card:active {
+      transform: scale(0.96);
+    }
+    .cross-card .emoji {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .cross-card .nombre {
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .cross-card .precio {
+      font-weight: 600;
+      color: #b87a7a;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    /* ========== BARRA INFERIOR FIJA ========== */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 0.6rem 1rem;
+      border-top: 1px solid #f0e8e4;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+      z-index: 200;
+      max-width: 480px;
+      margin: 0 auto;
+      right: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.3rem;
+    }
+    .bottom-bar .info-precio {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      flex: 0 1 auto;
+    }
+    .bottom-bar .precio-final {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #2d1f1e;
+    }
+    .bottom-bar .precio-final small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #7a6360;
+      margin-left: 0.2rem;
+    }
+    .bottom-bar .plan-label {
+      font-size: 0.65rem;
+      color: #7a6360;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .bottom-bar .btn-comprar {
+      background: #8fc9c9;
+      border: none;
+      border-radius: 60px;
+      padding: 0.6rem 1.6rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e3a3a;
+      box-shadow: 0 4px 0 #6ba3a3;
+      cursor: pointer;
+      transition: 0.08s;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      flex: 0 1 auto;
+      min-width: 140px;
+    }
+    .bottom-bar .btn-comprar:active {
+      transform: translateY(4px);
+      box-shadow: 0 0px 0 #6ba3a3;
+    }
+    .bottom-bar .metodos-pago {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.65rem;
+      color: #7a6360;
+      width: 100%;
+      justify-content: flex-end;
+      margin-top: 0.2rem;
+    }
+    .bottom-bar .metodos-pago span {
+      background: #f0e8e4;
+      padding: 0.05rem 0.6rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+

@@ -1,0 +1,207 @@
+    /* ========== MODO OSCURO AUTOMÁTICO ========== */
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; }
+      body {
+        background-color: #171414;
+        color: #f3e8e5;
+      }
+      .header-global {
+        background: rgba(30, 25, 24, 0.72);
+      }
+      .header-global .back-arrow {
+        color: #f3e8e5;
+      }
+      .header-global .logo span {
+        background: #3b2929;
+      }
+      .hero {
+        background: linear-gradient(135deg, #3a2928 0%, #30252e 100%);
+      }
+      .hero-text p,
+      .descripcion p,
+      .faq-item p {
+        color: #d6c7c3;
+      }
+      .hero-carousel-wrapper,
+      .galeria-carousel-wrapper {
+        background: #211c1b;
+      }
+      .hero-carousel .hero-slide .nombre,
+      .galeria-carousel .sticker-slide .frase {
+        color: #f5e9e6;
+      }
+      .hero-carousel .hero-slide .fase {
+        color: #c7aaa5;
+        background: rgba(255,255,255,0.1);
+      }
+      .galeria-carousel .sticker-slide {
+        background: #2b2321;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+      }
+      .galeria-carousel .sticker-slide .funcion {
+        color: #c7aaa5;
+        background: #403431;
+      }
+      .badge-vendido {
+        color: #321f1f;
+      }
+      .plan-card {
+        background: #282120;
+      }
+      .plan-card.active {
+        background: #342625;
+        box-shadow: 0 4px 12px rgba(184, 122, 122, 0.2);
+      }
+      .plan-card .plan-nombre {
+        color: #f5e9e6;
+      }
+      .plan-card .plan-desc {
+        color: #c7aaa5;
+      }
+      .plan-card .plan-badge {
+        background: #403431;
+        color: #d9c8c4;
+      }
+      .price-block {
+        background: rgba(60,50,48,0.5);
+      }
+      .price-block .precio-grande,
+      .bottom-bar .precio-final {
+        color: #f5e9e6;
+      }
+      .price-block .precio-grande small,
+      .price-block .iva,
+      .bottom-bar .precio-final small,
+      .bottom-bar .plan-label,
+      .beneficios .beneficio-item .beneficio-desc {
+        color: #c7aaa5;
+      }
+      .que-incluye li {
+        color: #eee2df;
+      }
+      .descripcion p {
+        color: #d6c7c3;
+      }
+      .cross-card,
+      .step,
+      .faq-item,
+      .nicho-card,
+      .testimonio-item {
+        background: #282120;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+      }
+      .cross-card {
+        border-color: #403431;
+      }
+      .cross-card .precio {
+        color: #d79a9a;
+      }
+      .info-section h2,
+      .catalogo-section .section-title {
+        color: #f0e3e0;
+      }
+      .catalogo-section .subtitle,
+      .step .step-text p {
+        color: #c7aaa5;
+      }
+      .step .number {
+        background: #513636;
+        color: #f5d4d4;
+      }
+      .faq-item p {
+        color: #d6c7c3;
+      }
+      .nicho-card .fase,
+      .filtro-btn {
+        background: #403431;
+        color: #d9c8c4;
+      }
+      .nicho-card:active {
+        border-color: #754c4c;
+      }
+      .filtro-btn:active,
+      .filtro-btn.active {
+        background: #8e5d5d;
+        color: #fff;
+      }
+      .bottom-bar {
+        background: #211c1b;
+        border-top-color: #403431;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.22);
+      }
+      .bottom-bar .metodos-pago span {
+        background: #403431;
+        color: #d9c8c4;
+      }
+      .modal-box {
+        background: #211c1b;
+        color: #f3e8e5;
+      }
+      .modal-box .modal-resumen {
+        background: #2b2321;
+      }
+      .modal-box .modal-close {
+        color: #c7aaa5;
+      }
+      .modal-box .sello-stripe {
+        color: #c7aaa5;
+      }
+      .video-demo .video-placeholder {
+        background-color: #0d0a0a;
+      }
+      .muestra-gratuita .btn-muestra {
+        background: #282120;
+        border-color: #8e5d5d;
+        color: #f5e9e6;
+      }
+      .testimonio-item .avatar {
+        background: #403431;
+        color: #f5e9e6;
+      }
+      .testimonio-item .texto {
+        color: #f5e9e6;
+      }
+      .testimonio-item .autor {
+        color: #c7aaa5;
+      }
+      .contador-compras {
+        background: #403431;
+        color: #f5e9e6;
+      }
+      .no-refund-policy {
+        color: #c7aaa5;
+      }
+      .no-refund-policy strong {
+        color: #f5e9e6;
+      }
+      .no-refund-policy .sello {
+        background: #403431;
+        color: #f5e9e6;
+      }
+      .price-block .btn-comprar-top {
+        background: #5f8f8f;
+        color: #f5f5f5;
+        box-shadow: 0 4px 0 #3d6b6b, 0 2px 8px rgba(0,0,0,0.3);
+      }
+      .bottom-bar .btn-comprar {
+        background: #5f8f8f;
+        color: #f5f5f5;
+        box-shadow: 0 4px 0 #3d6b6b;
+      }
+      .modal-box .btn-pagar {
+        background: #5f8f8f;
+        color: #f5f5f5;
+        box-shadow: 0 6px 0 #3d6b6b;
+      }
+      footer {
+        background: #2a211f;
+      }
+      .footer-inner .copy,
+      .footer-links a {
+        color: #d9c8c4;
+      }
+      .hero-carousel-wrapper .click-hint {
+        background: rgba(255,255,255,0.3);
+        color: #2d1f1e;
+      }
+    }

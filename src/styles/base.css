@@ -1,61 +1,106 @@
-/* =========================================================
-   RESET
-========================================================= */
+    /* RESET Y FUENTE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, sans-serif;
+      background-color: #f5f0ed;
+      color: #2d1f1e;
+      line-height: 1.5;
+      padding-bottom: 90px;
+      padding-top: 64px;
+    }
+    .app-container {
+      max-width: 480px;
+      margin: 0 auto;
+      background: transparent;
+      overflow: hidden;
+      padding-bottom: 1px;
+    }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .text-secondary {
+      color: #7a6360;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+    .text-muted {
+      color: #b8a39e;
+      font-weight: 400;
+    }
 
-:root{
-  /* Paleta Stickeando — Manual de Identidad Visual */
-  --primary:#C1B6FF;      /* Lavanda Digital — identidad, header, focus */
-  --action:#98FFD4;       /* Menta Suave — CTAs, botones de compra, confirmaciones */
-  --action-dark:#6FE6B8;  /* Menta Suave (hover/active) */
-  --accent:#FFD2B6;       /* Durazno Pastel — badges, pricing tags */
-  --text:#2D2352;         /* Morado Berenjena — sustituye al negro puro */
-  --muted:#6B6180;        /* Morado Berenjena atenuado, para texto secundario */
-  --light:#9992AD;        /* Morado Berenjena claro, para texto terciario */
-  --line:#E6E1FA;         /* Línea sutil con tinte lavanda */
-  --bg:#FAFAFF;           /* Blanco Nube — fondo estructural */
-  --white:#fff;
-  --danger:#e74c3c;
+    /* ========== HEADER FIJO TRANSPARENTE ========== */
+    .header-global {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 248, 245, 0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.6rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: none;
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .header-global .back-arrow {
+      position: absolute;
+      left: 1.2rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #3d2c2b;
+      padding: 0.2rem;
+      line-height: 1;
+      display: none;
+    }
+    .header-global .back-arrow.visible {
+      display: block;
+    }
+    .header-global .back-arrow:active {
+      opacity: 0.6;
+    }
+    .header-global .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #c77d7d;
+      letter-spacing: -0.03em;
+      display: inline-block;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .header-global .logo span {
+      background: #fce4d6;
+      padding: 0 0.5rem;
+      border-radius: 30px;
+    }
 
-  --font-heading:'Poppins','Quicksand','Nunito',sans-serif;
-  --font-body:'Inter','Roboto','Montserrat',sans-serif;
-}
+    /* ========== OCULTAR/MOSTRAR TABS ========== */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font-body);
-  line-height:1.4;
-  padding-bottom:76px;
-  -webkit-font-smoothing:antialiased;
-}
-
-button,
-input{
-  font:inherit;
-}
-
-button{
-  border:0;
-  cursor:pointer;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-.container{
-  width:min(1200px,100% - 24px);
-  margin:auto;
-}
-
+    @supports (padding: max(0px)) {
+      body {
+        padding-bottom: max(90px, calc(90px + env(safe-area-inset-bottom)));
+      }
+      .bottom-bar {
+        padding-bottom: max(0.6rem, calc(0.6rem + env(safe-area-inset-bottom)));
+      }
+    }
