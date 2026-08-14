@@ -112,9 +112,13 @@
         color: #d6c7c3;
       }
       .nicho-card .fase,
-      .filtro-btn {
+      .filtro-btn,
+      .buscar-nicho {
         background: #403431;
         color: #d9c8c4;
+      }
+      .buscar-nicho::placeholder {
+        color: #a08c88;
       }
       .nicho-card:active {
         border-color: #754c4c;
@@ -197,7 +201,8 @@
         background: #2a211f;
       }
       .footer-inner .copy,
-      .footer-links a {
+      .footer-links a,
+      .footer-links button {
         color: #d9c8c4;
       }
       .hero-carousel-wrapper .click-hint {

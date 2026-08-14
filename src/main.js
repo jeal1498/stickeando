@@ -9,6 +9,7 @@ import {
   verDemo
 } from './views/detalle.js';
 import { cerrarModal, irAPagar, initModalResumen } from './components/modal-resumen.js';
+import { openLegal, closeLegal } from './components/legal-modal.js';
 import { goBack, initRouter } from './router.js';
 
 // Mapa central de acciones: cada elemento interactivo del HTML lleva un
@@ -22,7 +23,9 @@ const actions = {
   'descargar-muestra': descargarMuestra,
   'ver-demo': verDemo,
   'close-modal-resumen': cerrarModal,
-  'ir-a-pagar': irAPagar
+  'ir-a-pagar': irAPagar,
+  'open-legal': el => openLegal(el),
+  'close-legal': closeLegal
 };
 
 document.addEventListener('click', e => {

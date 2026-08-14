@@ -64,6 +64,7 @@
       <div class="catalogo-section" id="catalogo">
         <h2 class="section-title">📂 Catálogo de Nichos</h2>
         <p class="subtitle">Elige tu profesión</p>
+        <input type="search" id="buscarNicho" class="buscar-nicho" placeholder="🔍 Busca tu profesión (ej. dentista, abogado...)" aria-label="Buscar rubro">
         <div class="filtros" id="filtros-container">
           <button class="filtro-btn active" data-fase="todos">Todos</button>
           <button class="filtro-btn" data-fase="salud-mental">Salud Mental</button>
@@ -73,6 +74,7 @@
           <button class="filtro-btn" data-fase="educacion">Educación</button>
         </div>
         <div class="nicho-grid" id="nichos-grid"></div>
+        <p class="sin-resultados hidden" id="sinResultados">No encontramos ningún rubro con ese nombre.</p>
       </div>
 
       <!-- CÓMO FUNCIONA -->
@@ -108,9 +110,9 @@
     <div class="container footer-inner" style="max-width:480px; margin:0 auto; padding:0 1.2rem;">
       <div class="copy">© 2026 Stickeando</div>
       <div class="footer-links">
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos</a>
-        <a href="#">Contacto</a>
+        <button type="button" data-action="open-legal" data-doc="privacidad">Política de privacidad</button>
+        <button type="button" data-action="open-legal" data-doc="terminos">Términos</button>
+        <a href="mailto:hola@stickeando.app">Contacto</a>
       </div>
     </div>
   </footer>
@@ -135,13 +137,10 @@
   </div>
 
 
-  <!-- =======================================================
-       LEGAL MODAL (Aviso de privacidad / Términos)
-  ======================================================== -->
-
-  <div class="modal" id="legalModal">
-    <div class="modal-card" id="legalModalCard">
-      <button class="modal-close" data-action="close-legal">×</button>
+  <!-- MODAL LEGAL (Aviso de privacidad / Términos) -->
+  <div class="modal-overlay" id="legalModal">
+    <div class="modal-box" style="text-align:left;">
+      <button class="modal-close" type="button" data-action="close-legal">×</button>
       <h2 id="legalModalTitle">Aviso de privacidad</h2>
       <div class="legal-body" id="legalModalBody"></div>
     </div>

@@ -1,6 +1,9 @@
 import { nichesList } from '../data/niches/index.js';
 import { initHeroCarousel } from '../components/hero-carousel.js';
 
+let faseActual = 'todos';
+let queryActual = '';
+
 function nichoCardHTML(nicho, index) {
   return `
     <div class="nicho-card" data-action="go-to-detalle" data-index="${index}">
@@ -11,14 +14,26 @@ function nichoCardHTML(nicho, index) {
   `;
 }
 
-export function renderNichos(fase = 'todos') {
+function nichosFiltrados() {
+  return nichesList.filter(n => {
+    const coincideFase = faseActual === 'todos' || n.fase === faseActual;
+    const coincideQuery =
+      !queryActual || n.nombre.toLowerCase().includes(queryActual);
+    return coincideFase && coincideQuery;
+  });
+}
+
+export function renderNichos(fase = faseActual) {
+  faseActual = fase;
+
   const grid = document.getElementById('nichos-grid');
-  const filtered =
-    fase === 'todos' ? nichesList : nichesList.filter(n => n.fase === fase);
+  const filtered = nichosFiltrados();
 
   grid.innerHTML = filtered
     .map(nicho => nichoCardHTML(nicho, nichesList.indexOf(nicho)))
     .join('');
+
+  document.getElementById('sinResultados')?.classList.toggle('hidden', filtered.length > 0);
 }
 
 export function initFiltros() {
@@ -31,8 +46,21 @@ export function initFiltros() {
   });
 }
 
+// Filtra el catálogo en vivo por nombre de profesión, respetando el filtro
+// de fase que esté activo en ese momento.
+export function initBusqueda() {
+  const input = document.getElementById('buscarNicho');
+  if (!input) return;
+
+  input.addEventListener('input', () => {
+    queryActual = input.value.trim().toLowerCase();
+    renderNichos(faseActual);
+  });
+}
+
 export function initHome() {
   renderNichos();
   initHeroCarousel(nichesList);
   initFiltros();
+  initBusqueda();
 }

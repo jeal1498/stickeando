@@ -170,6 +170,32 @@
       margin-bottom: 1rem;
     }
 
+    .buscar-nicho {
+      width: 100%;
+      border: none;
+      background: #f3e8e4;
+      border-radius: 60px;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #4d3a38;
+      margin-bottom: 0.5rem;
+      outline: none;
+    }
+    .buscar-nicho::placeholder {
+      color: #9a7b78;
+    }
+    .buscar-nicho:focus {
+      box-shadow: 0 0 0 2px #dbb5b0;
+    }
+
+    .sin-resultados {
+      text-align: center;
+      color: #9a7b78;
+      font-size: 0.85rem;
+      padding: 2rem 0;
+    }
+
     .nicho-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -264,11 +290,16 @@
       justify-content: center;
       gap: 0.6rem 1.2rem;
     }
-    .footer-links a {
+    .footer-links a,
+    .footer-links button {
       text-decoration: none;
       color: #4d3a38;
       font-weight: 500;
       font-size: 0.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .mt-2 { margin-top: 1.5rem; }

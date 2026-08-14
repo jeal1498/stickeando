@@ -28,9 +28,9 @@ export function openLegal(el) {
 
   document.getElementById('legalModalTitle').textContent = doc.title;
   document.getElementById('legalModalBody').innerHTML = doc.body;
-  document.getElementById('legalModal').classList.add('open');
+  document.getElementById('legalModal').classList.add('active');
 }
 
 export function closeLegal() {
-  document.getElementById('legalModal').classList.remove('open');
+  document.getElementById('legalModal').classList.remove('active');
 }
