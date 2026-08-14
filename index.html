@@ -50,7 +50,7 @@
         <img src="/brand/logo-header.png" alt="Stickeando" class="brand-logo">
 
         <div class="header-search">
-          <input type="search" placeholder="Buscar stickers, paquetes y diseños" aria-label="Buscar">
+          <input type="search" id="searchInput" placeholder="Buscar tu rubro o paquete" aria-label="Buscar">
           <button type="button" aria-label="Buscar">🔍</button>
         </div>
 
@@ -68,11 +68,42 @@
 
     <main class="container feed-wrap">
 
+      <!-- Selector de rubros: se pinta dinámicamente en home.js -->
+      <nav class="niche-nav" id="nicheNav" aria-label="Rubros"></nav>
+
+      <p class="breadcrumb" id="nicheBreadcrumb"></p>
+
       <p class="feed-title" id="feedTitle">Recomendado para ti en <strong>Stickers para WhatsApp</strong></p>
 
       <!-- El feed se pinta dinámicamente en home.js según el nicho activo (?n=slug) -->
       <div class="feed"></div>
+
+      <p class="no-results hidden" id="noResults">No encontramos resultados para tu búsqueda.</p>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+
+        <div class="footer-col">
+          <p class="footer-brand">Stickeando</p>
+          <p class="footer-tagline">Empatía digital para tu negocio.</p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Legal</p>
+          <button type="button" class="footer-link" data-action="open-legal" data-doc="privacidad">Aviso de privacidad</button>
+          <button type="button" class="footer-link" data-action="open-legal" data-doc="terminos">Términos y condiciones</button>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-heading">Contacto</p>
+          <a class="footer-link" href="mailto:hola@stickeando.app">hola@stickeando.app</a>
+          <a class="footer-link" href="https://wa.me/5210000000000" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+
+      </div>
+      <p class="footer-copy">© 2026 Stickeando. Todos los derechos reservados.</p>
+    </footer>
 
   </div>
 
@@ -1041,6 +1072,19 @@
 
     </div>
 
+  </div>
+
+
+  <!-- =======================================================
+       LEGAL MODAL (Aviso de privacidad / Términos)
+  ======================================================== -->
+
+  <div class="modal" id="legalModal">
+    <div class="modal-card" id="legalModalCard">
+      <button class="modal-close" data-action="close-legal">×</button>
+      <h2 id="legalModalTitle">Aviso de privacidad</h2>
+      <div class="legal-body" id="legalModalBody"></div>
+    </div>
   </div>
 
   <script type="module" src="/src/main.js"></script>

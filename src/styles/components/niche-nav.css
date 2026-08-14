@@ -1,0 +1,142 @@
+/* =========================================================
+   NICHE NAV (selector de rubros)
+========================================================= */
+
+.niche-nav{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:14px 0 4px;
+  scrollbar-width:none;
+}
+
+.niche-nav::-webkit-scrollbar{
+  display:none;
+}
+
+.niche-pill{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+  text-decoration:none;
+}
+
+.niche-pill.active{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:var(--text);
+}
+
+.niche-pill-icon{
+  font-size:15px;
+}
+
+
+/* =========================================================
+   SEARCH / EMPTY STATE
+========================================================= */
+
+.hidden{
+  display:none !important;
+}
+
+.no-results{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  padding:30px 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer{
+  background:#fff;
+  border-top:1px solid var(--line);
+  margin-top:20px;
+  padding:28px 0 16px;
+}
+
+.footer-inner{
+  display:flex;
+  flex-wrap:wrap;
+  gap:28px;
+  margin-bottom:16px;
+}
+
+.footer-col{
+  min-width:140px;
+}
+
+.footer-brand{
+  font-family:var(--font-heading);
+  font-weight:800;
+  font-size:16px;
+  color:var(--text);
+}
+
+.footer-tagline{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.footer-heading{
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.03em;
+  color:var(--text);
+  margin-bottom:8px;
+}
+
+.footer-link{
+  display:block;
+  background:transparent;
+  border:0;
+  padding:0;
+  text-align:left;
+  font-size:13px;
+  color:var(--muted);
+  text-decoration:none;
+  margin-bottom:6px;
+  cursor:pointer;
+}
+
+.footer-link:hover{
+  color:var(--text);
+}
+
+.footer-copy{
+  text-align:center;
+  font-size:11px;
+  color:var(--light);
+}
+
+
+/* =========================================================
+   LEGAL MODAL BODY
+========================================================= */
+
+.legal-body{
+  font-size:13px;
+  color:var(--text);
+  line-height:1.6;
+  max-height:60vh;
+  overflow-y:auto;
+}
+
+.legal-body p{
+  margin-bottom:10px;
+}

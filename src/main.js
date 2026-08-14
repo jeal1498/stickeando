@@ -11,6 +11,7 @@ import {
 import { initHomeFeed } from './views/home.js';
 import { openCart, closeCart, updateCart, removeCartItem, checkout } from './components/cart-drawer.js';
 import { openCheckout, closeModal, simulatePayment } from './components/checkout-modal.js';
+import { openLegal, closeLegal } from './components/legal-modal.js';
 import { goToProduct, goBack } from './router.js';
 
 // Mapa central de acciones: cada elemento interactivo del HTML lleva un
@@ -29,6 +30,8 @@ const actions = {
   'checkout': checkout,
   'close-modal': closeModal,
   'simulate-payment': simulatePayment,
+  'open-legal': el => openLegal(el),
+  'close-legal': closeLegal,
   'reload': () => location.reload(),
   'go-to-product': el => goToProduct(el.dataset.id),
   'select-package': el => selectPackage(el.dataset.id),
