@@ -72,20 +72,17 @@
       opacity: 0.6;
     }
     .header-global .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #c77d7d;
-      letter-spacing: -0.03em;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       cursor: pointer;
       background: none;
       border: none;
       padding: 0;
     }
-    .header-global .logo span {
-      background: #fce4d6;
-      padding: 0 0.5rem;
-      border-radius: 30px;
+    .header-global .logo-img {
+      height: 34px;
+      width: auto;
+      display: block;
     }
 
     /* ========== OCULTAR/MOSTRAR TABS ========== */

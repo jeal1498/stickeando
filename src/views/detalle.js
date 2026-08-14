@@ -40,34 +40,6 @@ function detalleContenidoHTML(nicho, planData) {
       </div>
     </div>
 
-    <!-- PLANES -->
-    <div class="plan-selector" id="plan-selector">
-      <div class="plan-card" data-plan="basic" data-action="select-plan">
-        <div class="check-mark">✓</div>
-        <div class="plan-nombre">Esencial</div>
-        <div class="plan-desc">10 stickers</div>
-      </div>
-      <div class="plan-card active" data-plan="completo" data-action="select-plan">
-        <div class="check-mark">✓</div>
-        <div class="plan-nombre">Experto</div>
-        <div class="plan-desc">30 stickers + poses</div>
-      </div>
-    </div>
-    <button class="link-plan-custom" data-plan="premium" data-action="select-plan">¿Buscas algo a medida? Diseño exclusivo →</button>
-
-    <!-- PRECIO Y CTA SUPERIOR -->
-    <div class="price-block">
-      <div>
-        <div class="precio-grande" id="precio-actual">${planData.precio} <small>MXN</small></div>
-        <div class="iva">IVA incluido</div>
-      </div>
-      <button class="btn-comprar-top" id="btn-comprar-top" data-action="comprar">Adquirir ${planData.nombre}</button>
-    </div>
-    <div class="no-refund-policy">
-      <span>✅ <strong>Entrega garantizada</strong> + instalación asistida vía WhatsApp</span>
-      <span class="sello">Soporte 24/7</span>
-    </div>
-
     <!-- BENEFICIOS -->
     <div class="beneficios">
       <div class="beneficio-item">
@@ -84,26 +56,9 @@ function detalleContenidoHTML(nicho, planData) {
       </div>
     </div>
 
-    <!-- QUÉ INCLUYE -->
-    <div class="que-incluye">
-      <h3>📦 ¿Qué incluye?</h3>
-      <ul id="lista-inclusiones">
-        ${planData.incluye.map(item => `<li>${item}</li>`).join('')}
-      </ul>
-    </div>
-
-    <!-- MUESTRA GRATUITA (arriba, cerca del CTA: gratificación instantánea) -->
-    <div class="muestra-gratuita">
-      <button class="btn-muestra" data-action="descargar-muestra">
-        🎁 Descarga una muestra gratis
-        <span style="font-size:0.7rem; color:#7a6360;">(1 sticker de prueba)</span>
-      </button>
-    </div>
-
-    <!-- A partir de aquí, todo colapsado por defecto: acerca el CTA
-         principal al inicio del scroll y baja la carga sensorial. -->
-    <details class="seccion-colapsable">
-      <summary>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></summary>
+    <!-- TESTIMONIOS (visibles, no colapsados: generan confianza antes del precio) -->
+    <div class="testimonios">
+      <h3>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></h3>
       <div class="testimonio-grid">
         <div class="testimonio-item">
           <div class="avatar">👩</div>
@@ -118,8 +73,53 @@ function detalleContenidoHTML(nicho, planData) {
           <div><div class="texto">"Los stickers son un éxito en mi consulta. Los pacientes los adoran y agradecen los recordatorios."</div><div class="autor">— Dra. Ana, Dentista</div></div>
         </div>
       </div>
-    </details>
+    </div>
 
+    <!-- PLANES -->
+    <div class="plan-selector" id="plan-selector">
+      <div class="plan-card" data-plan="basic" data-action="select-plan">
+        <div class="check-mark">✓</div>
+        <div class="plan-nombre">Esencial</div>
+        <div class="plan-desc">10 stickers</div>
+      </div>
+      <div class="plan-card active" data-plan="completo" data-action="select-plan">
+        <div class="check-mark">✓</div>
+        <div class="plan-nombre">Experto</div>
+        <div class="plan-desc">30 stickers + poses</div>
+      </div>
+    </div>
+    <button class="link-plan-custom" data-plan="premium" data-action="select-plan">¿Buscas algo a medida? Diseño exclusivo →</button>
+
+    <!-- PRECIO Y CTA -->
+    <div class="price-block">
+      <div>
+        <div class="precio-grande" id="precio-actual">${planData.precio} <small>MXN</small></div>
+        <div class="iva">IVA incluido</div>
+      </div>
+      <button class="btn-comprar-top" id="btn-comprar-top" data-action="comprar">Adquirir ${planData.nombre}</button>
+    </div>
+    <div class="no-refund-policy">
+      <span>✅ <strong>Entrega garantizada</strong> + instalación asistida vía WhatsApp</span>
+      <span class="sello">Soporte 24/7</span>
+    </div>
+
+    <!-- QUÉ INCLUYE -->
+    <div class="que-incluye">
+      <h3>📦 ¿Qué incluye?</h3>
+      <ul id="lista-inclusiones">
+        ${planData.incluye.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+
+    <!-- MUESTRA GRATUITA -->
+    <div class="muestra-gratuita">
+      <button class="btn-muestra" data-action="descargar-muestra">
+        🎁 Descarga una muestra gratis
+        <span style="font-size:0.7rem; color:#7a6360;">(1 sticker de prueba)</span>
+      </button>
+    </div>
+
+    <!-- A partir de aquí, colapsado por defecto -->
     <details class="seccion-colapsable">
       <summary>🎥 Mira cómo funcionan en WhatsApp</summary>
       <div class="video-placeholder" data-action="ver-demo">
