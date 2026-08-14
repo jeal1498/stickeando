@@ -196,6 +196,28 @@
       padding: 2rem 0;
     }
 
+    .categoria-grupo {
+      margin-bottom: 1.4rem;
+    }
+    .categoria-titulo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4a3b3a;
+      margin: 0 0 0.6rem;
+    }
+    .ver-mas-categoria {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      color: #b06a63;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.6rem 0;
+      cursor: pointer;
+      text-align: center;
+    }
+
     .nicho-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

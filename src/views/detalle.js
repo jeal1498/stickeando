@@ -2,7 +2,7 @@ import { nichesList } from '../data/niches/index.js';
 import { getPlanData } from '../data/plans.js';
 import { pushDetalleState } from '../router.js';
 import { renderGallerySlides, startGalleryCarousel } from '../components/gallery-carousel.js';
-import { mostrarModal } from '../components/modal-resumen.js';
+import { mostrarModal, comprarDirecto } from '../components/modal-resumen.js';
 
 let currentNichoIndex = 0;
 let currentPlan = 'completo';
@@ -52,13 +52,8 @@ function detalleContenidoHTML(nicho, planData) {
         <div class="plan-nombre">Experto</div>
         <div class="plan-desc">30 stickers + poses</div>
       </div>
-      <div class="plan-card" data-plan="premium" data-action="select-plan">
-        <div class="check-mark">✓</div>
-        <div class="plan-nombre">A medida</div>
-        <div class="plan-desc">Diseño exclusivo</div>
-        <span class="plan-badge">Personalizado</span>
-      </div>
     </div>
+    <button class="link-plan-custom" data-plan="premium" data-action="select-plan">¿Buscas algo a medida? Diseño exclusivo →</button>
 
     <!-- PRECIO Y CTA SUPERIOR -->
     <div class="price-block">
@@ -69,7 +64,7 @@ function detalleContenidoHTML(nicho, planData) {
       <button class="btn-comprar-top" id="btn-comprar-top" data-action="comprar">Adquirir ${planData.nombre}</button>
     </div>
     <div class="no-refund-policy">
-      <span>🔒 Sin reembolso, pero con <strong>garantía de instalación asistida</strong> vía WhatsApp</span>
+      <span>✅ <strong>Entrega garantizada</strong> + instalación asistida vía WhatsApp</span>
       <span class="sello">Soporte 24/7</span>
     </div>
 
@@ -97,9 +92,18 @@ function detalleContenidoHTML(nicho, planData) {
       </ul>
     </div>
 
-    <!-- TESTIMONIOS -->
-    <div class="testimonios">
-      <h3>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></h3>
+    <!-- MUESTRA GRATUITA (arriba, cerca del CTA: gratificación instantánea) -->
+    <div class="muestra-gratuita">
+      <button class="btn-muestra" data-action="descargar-muestra">
+        🎁 Descarga una muestra gratis
+        <span style="font-size:0.7rem; color:#7a6360;">(1 sticker de prueba)</span>
+      </button>
+    </div>
+
+    <!-- A partir de aquí, todo colapsado por defecto: acerca el CTA
+         principal al inicio del scroll y baja la carga sensorial. -->
+    <details class="seccion-colapsable">
+      <summary>✨ Lo que dicen nuestros clientes <span class="contador-compras">+350 compras</span></summary>
       <div class="testimonio-grid">
         <div class="testimonio-item">
           <div class="avatar">👩</div>
@@ -114,32 +118,22 @@ function detalleContenidoHTML(nicho, planData) {
           <div><div class="texto">"Los stickers son un éxito en mi consulta. Los pacientes los adoran y agradecen los recordatorios."</div><div class="autor">— Dra. Ana, Dentista</div></div>
         </div>
       </div>
-    </div>
+    </details>
 
-    <!-- VIDEO DEMO -->
-    <div class="video-demo">
-      <h3>🎥 Mira cómo funcionan en WhatsApp</h3>
+    <details class="seccion-colapsable">
+      <summary>🎥 Mira cómo funcionan en WhatsApp</summary>
       <div class="video-placeholder" data-action="ver-demo">
         <span>▶ Ver demo</span>
       </div>
-    </div>
+    </details>
 
-    <!-- MUESTRA GRATUITA -->
-    <div class="muestra-gratuita">
-      <button class="btn-muestra" data-action="descargar-muestra">
-        🎁 Descarga una muestra gratis
-        <span style="font-size:0.7rem; color:#7a6360;">(1 sticker de prueba)</span>
-      </button>
-    </div>
-
-    <!-- DESCRIPCIÓN -->
-    <div class="descripcion">
-      <h3>📖 Descripción del producto</h3>
+    <details class="seccion-colapsable">
+      <summary>📖 Descripción del producto</summary>
       <p><strong>${nicho.nombre}</strong> – ¿Cansado de que tus mensajes parezcan fríos y distantes? Nuestros stickers añaden <strong>calidez y profesionalismo</strong> en cada interacción. Con el personaje <strong>${nicho.personaje}</strong>, lograrás que tus clientes se sientan valorados y atendidos.</p>
       <p>${nicho.descripcion}</p>
-    </div>
+    </details>
 
-    <!-- CROSS-SELLING -->
+    <!-- CROSS-SELLING (se deja visible: es descubrimiento rápido, no lectura) -->
     <div class="cross-selling">
       <h3>🔍 También te puede interesar</h3>
       <div class="cross-carousel">
@@ -158,15 +152,14 @@ function detalleContenidoHTML(nicho, planData) {
       </div>
     </div>
 
-    <!-- FAQ -->
-    <div class="info-section" id="faq-detalle">
-      <h2>❓ Preguntas frecuentes</h2>
+    <details class="seccion-colapsable" id="faq-detalle">
+      <summary>❓ Preguntas frecuentes</summary>
       <div class="faq-item"><strong>¿Qué formato tienen?</strong><p>Archivos .wastickers, compatibles con Sticker Maker. Te enviamos un video tutorial.</p></div>
       <div class="faq-item"><strong>¿Puedo usarlos en WhatsApp normal?</strong><p>Sí, el proceso es el mismo para WhatsApp Business y normal.</p></div>
       <div class="faq-item"><strong>¿Qué incluye el plan A medida?</strong><p>Mascota desde cero, colores personalizados y frases adaptadas a tu negocio.</p></div>
       <div class="faq-item"><strong>¿Son de uso comercial?</strong><p>Sí, diseñados para profesionales y su comunicación con clientes.</p></div>
       <div class="faq-item"><strong>¿Cómo los instalo?</strong><p>Te enviaremos un enlace de descarga y un video paso a paso. Además, tienes soporte 24/7.</p></div>
-    </div>
+    </details>
   `;
 }
 
@@ -182,6 +175,7 @@ function actualizarBottomBar(planData) {
       <span class="plan-label">Plan ${planData.nombre}</span>
     </div>
     <button class="btn-comprar" data-action="comprar">Adquirir ${planData.nombre}</button>
+    <button class="link-ver-resumen" data-action="ver-resumen">Ver resumen antes de pagar</button>
     <div class="metodos-pago">
       <span>💳 Visa</span>
       <span>💳 Mastercard</span>
@@ -245,6 +239,13 @@ export function seleccionarPlan(plan) {
 }
 
 export function comprar() {
+  const nicho = nichesList[currentNichoIndex];
+  const planData = getPlanData(currentPlan, nicho);
+  comprarDirecto(planData);
+}
+
+// Opción secundaria para quien prefiera revisar su pedido antes de pagar.
+export function verResumen() {
   const nicho = nichesList[currentNichoIndex];
   const planData = getPlanData(currentPlan, nicho);
   mostrarModal(planData, nicho);

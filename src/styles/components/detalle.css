@@ -296,6 +296,38 @@
       font-weight: 700;
     }
 
+    /* ========== SECCIONES COLAPSABLES (testimonios, video, descripción, FAQ) ========== */
+    /* Cerradas por defecto: bajan la carga visual y acercan el CTA principal
+       al inicio del scroll. Un toque las abre sin perder el resto de la página. */
+    .seccion-colapsable {
+      padding: 0.4rem 1.2rem 0.6rem;
+      border-bottom: 1px solid #f0e4e0;
+    }
+    .seccion-colapsable summary {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #3d2c2b;
+      padding: 0.6rem 0;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .seccion-colapsable summary::-webkit-details-marker {
+      display: none;
+    }
+    .seccion-colapsable summary::after {
+      content: '⌄';
+      margin-left: auto;
+      font-size: 1.2rem;
+      color: #b06a63;
+      transition: transform 0.15s;
+    }
+    .seccion-colapsable[open] summary::after {
+      transform: rotate(180deg);
+    }
+
     /* ========== DESCRIPCIÓN ========== */
     .descripcion {
       padding: 0.4rem 1.2rem 0.6rem;

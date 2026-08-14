@@ -13,6 +13,15 @@ export function mostrarModal(planData, nicho) {
   document.getElementById('modalResumen').classList.add('active');
 }
 
+// Checkout directo: el botón principal de compra salta el modal de resumen
+// y abre Stripe de inmediato (menos clics = menos fricción para TDAH).
+// El modal queda disponible como opción secundaria ("Ver resumen") para
+// quien sí quiera revisar antes de pagar.
+export function comprarDirecto(planData) {
+  stripeUrl = getStripeCheckoutUrl(planData.id);
+  window.open(stripeUrl, '_blank', 'noopener,noreferrer');
+}
+
 export function cerrarModal() {
   document.getElementById('modalResumen').classList.remove('active');
 }

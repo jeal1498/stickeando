@@ -1,10 +1,11 @@
 import './styles/main.css';
 
-import { initHome } from './views/home.js';
+import { initHome, toggleCategoria } from './views/home.js';
 import {
   mostrarDetalle,
   seleccionarPlan,
   comprar,
+  verResumen,
   descargarMuestra,
   verDemo
 } from './views/detalle.js';
@@ -18,8 +19,10 @@ import { goBack, initRouter } from './router.js';
 const actions = {
   'go-back': goBack,
   'go-to-detalle': el => mostrarDetalle(Number(el.dataset.index)),
+  'toggle-categoria': el => toggleCategoria(el.dataset.fase),
   'select-plan': el => seleccionarPlan(el.dataset.plan),
   'comprar': comprar,
+  'ver-resumen': verResumen,
   'descargar-muestra': descargarMuestra,
   'ver-demo': verDemo,
   'close-modal-resumen': cerrarModal,
